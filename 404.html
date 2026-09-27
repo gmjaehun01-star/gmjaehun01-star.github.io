@@ -30,12 +30,27 @@ small{display:block;margin-top:40px;color:var(--mute);font-size:13px}
 <body>
   <img class="logo" src="/images/logo.png" alt="Tkita">
   <div class="code">404</div>
-  <h1>찾으시는 페이지가 없습니다</h1>
-  <p>주소가 바뀌었거나 잘못 입력되었을 수 있습니다.<br>아래에서 원하시는 곳으로 이동해 주십시오.</p>
+  <h1 id="h">찾으시는 페이지가 없습니다</h1>
+  <p id="p">주소가 바뀌었거나 잘못 입력되었을 수 있습니다.<br>아래에서 원하시는 곳으로 이동해 주십시오.</p>
   <div class="cta">
-    <a class="btn fill" href="/">제품 소개로 가기</a>
-    <a class="btn line" href="/#/contact">도입 문의하기</a>
+    <a class="btn fill" id="b1" href="/">제품 소개로 가기</a>
+    <a class="btn line" id="b2" href="/#/contact">도입 문의하기</a>
   </div>
-  <small>개발사 ㈜에어사운드 &nbsp;·&nbsp; 총판사 ㈜드림아이티 &nbsp;·&nbsp; 051-507-6114</small>
+  <small id="f">개발사 ㈜에어사운드 &nbsp;·&nbsp; 총판사 ㈜드림아이티 &nbsp;·&nbsp; 051-507-6114</small>
+<script>
+(function(){
+  var l='ko';
+  try{ var v=localStorage.getItem('tkita_lang'); if(v==='en'||v==='ko') l=v; else throw 0; }
+  catch(e){ var n=((navigator.languages&&navigator.languages[0])||navigator.language||'ko').toLowerCase(); l=n.indexOf('ko')===0?'ko':'en'; }
+  if(l!=='en') return;
+  document.documentElement.lang='en';
+  document.title='Page not found | Tkita';
+  document.getElementById('h').textContent='Page not found';
+  document.getElementById('p').innerHTML='The address may have changed or been mistyped.<br>Please choose where you would like to go.';
+  document.getElementById('b1').textContent='Back to products';
+  document.getElementById('b2').textContent='Contact us';
+  document.getElementById('f').innerHTML='Developer AIRSOUND Co., Ltd. &nbsp;·&nbsp; Master Distributor Dream IT Co., Ltd. &nbsp;·&nbsp; +82-51-507-6114';
+})();
+</script>
 </body>
 </html>

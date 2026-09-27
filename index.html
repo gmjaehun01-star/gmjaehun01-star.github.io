@@ -444,6 +444,243 @@ const SITE = {
 };
 </script>
 
+<!-- ══════════════════════════════════════════════════════════════
+     영문판 내용입니다. 위 SITE(한국어)와 같은 구조이며,
+     여기에 적은 항목만 영문으로 바뀌고 나머지는 한국어판을 그대로 씁니다.
+     (이미지 · 유튜브 · 연락처 · 도입 기관 로고 등은 공통)
+     ══════════════════════════════════════════════════════════════ -->
+<script id="content-en">
+const SITE_EN = {
+
+  /* 영문 문의 양식이 따로 생기면 아래 줄 앞의 // 를 지우고 주소를 넣으세요.
+     비워두면 한국어 양식으로 연결되고, 영문 안내 문구가 함께 표시됩니다. */
+  // applyUrl: "https://forms.cloud.microsoft/r/영문양식주소",
+
+  maker:  "AIRSOUND Co., Ltd.",
+  seller: "Dream IT Co., Ltd.",
+  addr:   "Rm 1001, 22 Mora-ro, Sasang-gu, Busan, Republic of Korea",
+
+  heroTitle: "Spoken once, read in every language",
+  heroText:  "Lectures, consultations, meetings: no more waiting for an interpreter.\nTkita turns speech into live captions and translates them into each listener's language.",
+
+  proof: {
+    barLabel: "Translation quality · BLEU score",
+    barHint:  "Higher is better (out of 100)",
+    bars: [
+      ["Tkita",                76, true],
+      ["Google Translate API", 69, false]
+    ],
+    langs: [
+      ["77",  "Languages for speech recognition"],
+      ["133", "Languages for translation"]
+    ],
+    note: "BLEU is the international standard metric for machine translation quality. Measured under identical conditions; scores ranged from 73 to 79 across all language pairs.",
+    cert: "Test report GCL-SO2509-012 · 2025-09-04 · Global Certification Leader"
+  },
+
+  refsLead: "In use at 30+ universities across Korea, as well as K-12 schools, public agencies, and companies.",
+
+  /* 제품 — id 별로 적습니다. shotCaps 는 이미지 설명(shots 순서와 같음) */
+  products: {
+    caption: {
+      short: "Lectures",
+      tag:   "Live captions for lectures & talks",
+      lead:  "Turns one speaker's voice into live captions that each attendee reads in their own language.",
+      where: "Classrooms · Large lectures · Conferences · Forums",
+      flow: [
+        ["Launch the app", "Run it on the lecturer's PC, or use the web version with no installation."],
+        ["Create a caption room", "Name the room to generate a QR code and an access link."],
+        ["Attendees join", "They scan the QR code, open the web page, and choose their language."],
+        ["Saved automatically", "Audio and text files are kept as a lecture transcript."]
+      ],
+      scenes: ["Degree courses", "Conferences · Guest lectures", "Orientations · Briefings"],
+      feats: [
+        ["Captions as you speak", "Captions form in real time and are refined for context at the end of each sentence."],
+        ["Up to 30 languages in one room", "Every attendee can pick a different language within the same session."],
+        ["No app to install", "Scanning the QR code opens a web page. Nothing to download."],
+        ["Handles technical terms", "Add terms to a glossary to improve recognition of jargon and proper nouns."],
+        ["A transcript when you finish", "Audio and text are saved automatically for later review."]
+      ],
+      shotCaps: ["TkitaCaption overview", "Main screen", "Caption room and QR code",
+                 "Attendees choosing their language", "Saved records after a lecture", "Web version, no installation"]
+    },
+    talk: {
+      short: "Face-to-face",
+      tag:   "Interpretation for service desks",
+      lead:  "Two tablets face each other across the desk. Visitors just tap their country's flag to begin.",
+      where: "Service desks · Civil service counters · Counseling rooms",
+      flow: [
+        ["Tap Start", "Staff tap Start on their tablet. Devices are delivered already signed in."],
+        ["Choose a flag", "The visitor taps their country's flag. The consent screen appears in that language too."],
+        ["Tap the mic and speak", "Tap again when finished. Speech is translated into the other language right away."],
+        ["End and record", "The screen resets and the conversation is saved to a file."]
+      ],
+      scenes: ["Service desks", "Civil service counters", "Parent-teacher meetings"],
+      feats: [
+        ["Works without Korean", "Visitors just tap a flag. No instructions needed."],
+        ["Consent in their own language", "The privacy consent screen is shown in the visitor's language."],
+        ["Save common phrases", "Register frequently used phrases and send them without speaking."],
+        ["Screen clears after each session", "The next visitor never sees the previous conversation."],
+        ["Every consultation is recorded", "Saved files support follow-up visits and staff handovers."]
+      ],
+      shotCaps: ["TkitaTalk overview", "Staff screen: one Start button", "Visitor screen: choose a flag",
+                 "Staff view", "Visitor view: each in their own language", "Dedicated device set"]
+    },
+    mobile: {
+      short: "On the go",
+      tag:   "Interpretation in the field",
+      lead:  "Works on a single smartphone. The other person can join without installing anything.",
+      where: "In the field · On the move · Small groups",
+      flow: [
+        ["Open the app", "Choose Conversation, Invite, or Caption mode to suit the situation."],
+        ["Conversation mode", "Share one device; the screen splits top and bottom, one language each."],
+        ["Invite mode", "Show a QR code or link, and the other person joins on the web with no install."],
+        ["Review history", "Conversations are saved and organized by mode."]
+      ],
+      scenes: ["Around campus", "Site visits · Group tours", "Listening at conferences"],
+      feats: [
+        ["Three modes for every situation", "Face to face, at a distance, or listening on your own."],
+        ["Invite by QR, join on the web", "Guests never need to visit an app store."],
+        ["Up to 10 people at once", "Useful for one-on-one help as well as small group guidance."],
+        ["Adapts to background noise", "Microphone levels adjust automatically to the environment."],
+        ["History saved automatically", "Conversations are stored by mode for later reference."]
+      ],
+      shotCaps: ["TkitaMobile overview", "Launch screen and mode selection",
+                 "Invite by QR, talk on separate devices", "Conversation mode: split screen"]
+    },
+    meet: {
+      short: "Video meetings",
+      tag:   "Captions & minutes for video calls",
+      lead:  "Keep the video platform you already use. Paste the meeting link and captions appear.",
+      where: "Zoom · Teams · Google Meet · Webex",
+      flow: [
+        ["Copy the meeting link", "Create a meeting in Zoom, Teams, or similar as usual, and copy the invite link."],
+        ["Paste into TkitaMeet", "Enter the meeting name and link, then choose spoken and translation languages."],
+        ["Admit TkitaBot", "Press Start and a join request arrives in the meeting. Admit it and you are connected."],
+        ["Participants open the link", "A caption link appears in the meeting chat. One click, no install."],
+        ["Minutes when you finish", "Records are saved by speaker and language, with a summary."]
+      ],
+      scenes: ["Calls with overseas partners", "International collaboration", "Online classes · Webinars"],
+      feats: [
+        ["No need to switch tools", "Keep your meeting platform and accounts. Tkita works on top."],
+        ["Participants just click a link", "External partners do not need to install any software."],
+        ["Up to 4 spoken languages at once", "Participants choose from up to 30 translation languages."],
+        ["Register terms in advance", "Upload product names and jargon as keywords for better recognition."],
+        ["Meeting minutes, organized", "Saved by speaker and language, with an automatic summary."]
+      ],
+      shotCaps: ["TkitaMeet overview", "Live captions during a meeting",
+                 "Connecting a meeting and setting languages", "Managing minutes after a meeting"]
+    }
+  },
+
+  /* 기관 유형 — id 별로 적습니다 */
+  segments: {
+    univ: {
+      name: "Universities", short: "University",
+      headline: "More international students,\nbut classes and advising haven't changed.",
+      issues: [
+        ["Students miss much of what is taught in Korean.", "Participation and grades suffer, and some eventually drop out."],
+        ["Advising depends on one or two staff members.", "International offices cannot staff every language at every desk."],
+        ["More interpreters don't solve it.", "Their schedules never line up with classes and appointments, so the problem returns every semester."]
+      ],
+      depts: "International Affairs · Academic Affairs · Center for Teaching and Learning"
+    },
+    school: {
+      name: "K-12 Schools", short: "K-12",
+      headline: "Multicultural students\nneed to understand in order to learn.",
+      issues: [
+        ["Some students can't keep up in class.", "Limited Korean keeps them from participating, and they fall behind."],
+        ["Parent meetings rely on individual teachers.", "Communicating with parents who don't speak Korean is a struggle every time."],
+        ["Interpreters aren't available on demand.", "Schools rarely have someone they can call in when needed."]
+      ],
+      depts: "Multicultural Education · Student Support · Education Welfare"
+    },
+    public: {
+      name: "Public Agencies", short: "Public",
+      headline: "Are foreign-language requests\nfalling on just one staff member?",
+      issues: [
+        ["Requests pile up on whoever speaks the language.", "When that person is away, the counter stops."],
+        ["Staff rely on translation apps on personal phones.", "It is unofficial, accountability is unclear, and nothing is recorded."],
+        ["Consultations leave no record.", "Handovers fail, and returning visitors have to explain everything again."]
+      ],
+      depts: "Civil Service Desks · International Relations · Foreign Resident Support Centers"
+    }
+  },
+
+  intro: {
+    title: "Tkita in three minutes",
+    lead:  "See how it actually works. Each video plays into the next.",
+    videos: [
+      ["GY3_QZDO3CQ", "Introducing Tkita"],
+      ["MKyQ3UiLShI", "Tkita in action"],
+      ["e065sW8TdF8", "Use cases"]
+    ]
+  },
+
+  chooser: [
+    ["One person speaks, many listen: lectures, talks, briefings", "caption"],
+    ["Face-to-face conversations at a desk or counseling room", "talk"],
+    ["Quick conversations in hallways, on site, or on the move", "mobile"],
+    ["Video meetings that need captions and minutes", "meet"]
+  ],
+
+  compare: {
+    title: "All four at a glance",
+    lead:  "Same recognition engine and translation quality. Here is how they differ in use.",
+    rows: [
+      ["Setting",            "Classrooms · Lectures · Conferences", "Service desks · Counseling", "In the field · On the move", "Video meetings"],
+      ["Conversation",       "One speaks, many read",  "Face to face, two-way", "Face to face or remote", "Multi-party meetings"],
+      ["How to join",        "Scan QR, open web page", "Tap a flag",            "QR or link invite",      "Open the meeting link"],
+      ["Capacity",           "Captions in up to 30 languages", "One-on-one",   "Up to 10 people",        "4 spoken · 30 translated languages"],
+      ["Equipment",          "PC (installed or web)",  "Two dedicated tablets", "Smartphone",             "PC"],
+      ["Install for guests", "Not required",           "Not required",          "Not required",           "Not required"],
+      ["After the session",  "Audio · text saved",     "Conversation log saved","History saved by mode",  "Minutes + AI summary"]
+    ]
+  },
+
+  procedure: [
+    ["Inquiry",          "Reach us by phone, email, or the form. We start by understanding your situation."],
+    ["Free trial",       "After a meeting, try Tkita in real classes and service desks for two weeks to a month."],
+    ["Quote · Contract", "We finalize a setup that fits your organization's size and environment."],
+    ["Account setup",    "We issue accounts and walk you through using them."],
+    ["Ongoing support",  "Technical support and regular updates."]
+  ],
+
+  about: {
+    lead:   "Tkita is developed by AIRSOUND Co., Ltd. and distributed by Dream IT Co., Ltd., its master distributor.",
+    maker:  "A technology company that builds the speech recognition and translation engine behind all four products. Holds 15 registered patents.",
+    seller: "An IT company based in Busan, Korea, responsible for Tkita sales, deployment, and customer support for educational institutions, public agencies, and businesses.",
+    facts: [
+      ["Registered patents",       "15"],
+      ["SME Technology Market",    "Registered (2025-10-0000116)"],
+      ["Translation quality test", "BLEU avg. 76 · GCL-SO2509-012"],
+      ["Languages",                "77 speech recognition · 133 translation"]
+    ]
+  },
+
+  faq: {
+    items: [
+      ["Does it require installation?", "Please fill in the answer."],
+      ["Do attendees need to install anything?", "Please fill in the answer."],
+      ["Can we use our existing microphones?", "Please fill in the answer."],
+      ["Where are conversations and personal data stored?", "Please fill in the answer."],
+      ["How do contract terms and renewals work?", "Please fill in the answer."],
+      ["Are there limits on users or usage time?", "Please fill in the answer."]
+    ]
+  },
+
+  inquiry: {
+    title: "Considering Tkita for your organization?",
+    lead:  "We will recommend a setup and walk you through the process. Feel free to reach out.",
+    cards: [
+      ["Talk to us directly", "A member of our team will answer. Tell us about your organization and how you plan to use Tkita."],
+      ["Send an inquiry", "Leave your organization, department, and the product you are interested in. We will follow up. It takes about a minute."]
+    ]
+  }
+};
+</script>
+
+
 <style>
 :root{
   --blue:#2848F8; --blue-2:#3F6BFF; --blue-d:#1B36D6; --blue-x:#5B86FF;
@@ -485,6 +722,11 @@ h2{font-size:clamp(28px,3.4vw,40px)}
 .btn--ghost{border-color:rgba(255,255,255,.45);color:#fff}
 .btn--ghost:hover{background:rgba(255,255,255,.12)}
 .btn--sm{padding:9px 16px;font-size:14px;border-radius:10px}
+
+/* 언어 전환 */
+.langbtn{flex:none;border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;padding:7px 12px;
+  font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;letter-spacing:.02em;margin-left:14px}
+.langbtn:hover{border-color:var(--blue);color:var(--blue)}
 
 /* 상단 */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -815,7 +1057,8 @@ footer b{color:#fff}
   .trial .cols,.feats,.sgrid{grid-template-columns:1fr}
   .bar{height:auto;flex-wrap:wrap;padding:12px 0 10px;gap:10px}
   .brand img{height:24px}
-  .btn--sm{margin-left:auto}
+  .langbtn{margin-left:auto;padding:6px 10px}
+  .btn--sm{margin-left:0}
   nav{order:3;width:100%;margin-left:0;gap:20px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
   nav::-webkit-scrollbar{display:none}
   nav a{flex:none}
@@ -827,23 +1070,24 @@ footer b{color:#fff}
 </style>
 </head>
 <body>
-<a class="skip" href="#app">본문으로 건너뛰기</a>
+<a class="skip" id="skipLink" href="#app"></a>
 <header>
   <div class="wrap bar">
     <a class="brand" href="#/"><img src="images/logo.png" alt="Tkita"></a>
     <nav id="nav"></nav>
-    <a class="btn btn--grad btn--sm" id="navCta" href="#" data-ev="cta_apply">도입 문의</a>
+    <button class="langbtn" id="langBtn" type="button" data-ev="lang_switch"></button>
+    <a class="btn btn--grad btn--sm" id="navCta" href="#" data-ev="cta_apply"></a>
   </div>
 </header>
 
 <main id="app"></main>
-<div class="stick"><a class="btn btn--grad" id="stickApply" href="#" data-ev="cta_apply">도입 문의</a><a class="btn btn--line" id="stickTel" href="#" data-ev="contact_tel">전화 상담</a></div>
+<div class="stick"><a class="btn btn--grad" id="stickApply" href="#" data-ev="cta_apply"></a><a class="btn btn--line" id="stickTel" href="#" data-ev="contact_tel"></a></div>
 
 <footer>
   <div class="wrap fgrid">
     <div>
       <img class="flogo" src="images/logo-white.png" alt="Tkita">
-      <div><b>개발사 <span id="fMaker"></span> &nbsp;·&nbsp; 총판사 <span id="fSeller"></span></b></div>
+      <div><b><span id="fMakerL"></span> <span id="fMaker"></span> &nbsp;·&nbsp; <span id="fSellerL"></span> <span id="fSeller"></span></b></div>
       <div id="fAddr"></div>
       <div>Tel. <a id="fTel" data-ev="contact_tel" style="text-decoration:none;color:#fff"></a> &nbsp; Fax. <span id="fFax"></span> &nbsp; <a id="fMail" data-ev="contact_mail" style="text-decoration:none;color:#fff"></a></div>
     </div>
@@ -855,27 +1099,158 @@ footer b{color:#fff}
 const $ = (s,r=document)=>r.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pad = n => String(n).padStart(2,'0');
-const applyHref = () => SITE.formEmbed ? '#/contact' : SITE.applyUrl;
+/* ══ 다국어 ══════════════════════════════════════════════════
+   화면 공통 문구 사전입니다. 제품·기관 등 본문 내용은
+   위쪽 SITE(한국어)와 SITE_EN(영문)에서 관리합니다. */
+const UI = {
+  ko: {
+    skip:'본문으로 건너뛰기', lang_btn:'EN', lang_aria:'Switch to English',
+    cta:'도입 문의', cta_long:'도입 문의하기', tel_btn:'전화 상담',
+    maker:'개발사', seller:'총판사',
+    nav_all:'제품 소개', nav_all_sub:'전체 보기', f_contact:'도입 문의', f_about:'회사 소개', privacy:'개인정보처리방침',
+    cap_pill:'실시간 자막', cap_foot:'최대 30개 언어 동시',
+    pt:'점', delta:'▲ 구글 번역 API 대비 {n}점 높음', cert_view:'성적서 보기',
+    inq_tel:'전화 걸기 {tel}', inq_form:'문의 양식 작성',
+    refnote:'도입 기관 {n}곳 · 마우스를 올리면 멈춥니다',
+    hero_tag:'AI 실시간 자막 · 통번역', hero_more:'제품 살펴보기',
+    how_h:'말하면, 자막이 되고, 각자의 언어가 됩니다',
+    how_lead:'준비는 발표자가 프로그램을 켜는 것뿐입니다. 듣는 사람은 QR을 찍고 자기 언어를 고르면 끝입니다.',
+    how1_t:'발표자가 말합니다', how1_d:'마이크 음성은 물론 PC 재생 영상과 화상회의 상대 음성까지 인식합니다.',
+    how2_t:'즉시 자막이 됩니다', how2_d:'말하는 동시에 자막이 생기고, 문장이 끝나면 문맥에 맞게 교정됩니다.',
+    how3_t:'각자의 언어로 봅니다', how3_d:'참석자는 앱 설치 없이 자기 기기에서 원하는 언어로 봅니다.',
+    choose_h:'어떤 제품이 맞나요?', choose_lead:'쓰는 자리를 고르시면 됩니다. 인식 엔진과 번역 품질은 네 제품이 같습니다.',
+    prod_h:'제품 소개', prod_lead:'인식 엔진과 번역 품질, 용어 사전은 네 제품이 모두 같습니다. 쓰는 자리에 맞춰 고르시면 됩니다.',
+    more_link:'자세히 보기 →',
+    seg_h:'어떤 기관이신가요?', seg_lead:'기관 유형에 따라 겪는 상황과 맞는 제품이 다릅니다. 해당하는 곳을 고르시면 바로 보실 수 있습니다.',
+    proof_h:'측정된 결과로 말씀드립니다', ref_h:'이미 현장에서 쓰고 있습니다',
+    intro_default:'소개 영상', play:'소개 영상 재생', video_n:'영상 {n}',
+    cmp_col:'구분', cmp_note:'제품명을 누르시면 해당 제품 페이지로 이동합니다. 표가 잘려 보이면 좌우로 밀어서 보실 수 있습니다.',
+    more_h:'다른 제품도 보시겠습니까?', more_lead:'인식 엔진과 번역 품질은 네 제품이 같습니다. 쓰는 자리만 다릅니다.',
+    nf_h:'찾으시는 페이지가 없습니다', nf_p:'주소가 바뀌었거나 잘못 입력되었을 수 있습니다.<br>아래에서 원하시는 곳으로 이동해 주십시오.', nf_home:'제품 소개로 가기',
+    proc_h:'도입은 이렇게 진행됩니다', proc_lead:'문의부터 운영까지 다섯 단계입니다. 계약 전에 실제 환경에서 먼저 써보는 단계가 들어 있습니다.',
+    about_tag:'회사 소개', about_h:'개발과 총판', cert_full:'시험성적서 원문 보기 →', faq_h:'자주 묻는 질문',
+    seg_tag:'{name} 안내', seg_intro:'{name}에서 실제로 겪는 상황과, 거기에 맞는 Tkita 구성입니다.',
+    seg_issue_h:'이런 상황에서 쓰십니다', seg_pick_h:'{name}에 맞는 구성',
+    seg_pick_lead:'전 제품을 나열하지 않았습니다. {name}의 상황에 직접 대응하는 두 가지만 제안합니다.', seg_depts:'주요 도입 부서',
+    contact_tag:'기관 도입 문의', contact_h:'도입 상담을 신청하세요',
+    contact_lead:'담당자가 확인 후 연락드립니다. 미팅을 거쳐 2주에서 한 달까지 무상으로 써보실 수 있습니다.',
+    form_h:'기관 도입 문의 양식', form_p:'기관명, 담당 부서, 관심 제품을 남겨주시면 담당자가 연락드립니다. 1분이면 됩니다.',
+    form_note:'', form_open:'문의 양식 열기',
+    i_tel:'전화', i_mail:'이메일', i_fax:'팩스', i_addr:'주소', i_org:'개발 · 총판',
+    p_tag:'제품 {n} · {tag}', p_flow:'사용 흐름', p_scenes:'이런 자리에서 씁니다', p_pair:'함께 쓰는 기관',
+    p_pair_link:'{a} + {b} 구성 →', p_shots:'실제 화면', p_proof:'성능은 네 제품이 같습니다',
+    title_home:'Tkita — AI 실시간 자막·통번역 솔루션', title_seg:'{name} 안내 | Tkita', title_contact:'기관 도입 문의 | Tkita',
+    title_about:'회사 소개 | Tkita', title_faq:'자주 묻는 질문 | Tkita', title_nf:'페이지를 찾을 수 없습니다 | Tkita'
+  },
+  en: {
+    skip:'Skip to content', lang_btn:'한국어', lang_aria:'한국어로 보기',
+    cta:'Contact us', cta_long:'Contact us', tel_btn:'Call us',
+    maker:'Developer', seller:'Master Distributor',
+    nav_all:'Products', nav_all_sub:'Overview', f_contact:'Contact', f_about:'About', privacy:'Privacy Policy',
+    cap_pill:'Live captions', cap_foot:'Up to 30 languages at once',
+    pt:'', delta:'▲ {n} points higher than Google Translate API', cert_view:'View certificate',
+    inq_tel:'Call {tel}', inq_form:'Send an inquiry',
+    refnote:'{n} organizations · Hover to pause',
+    hero_tag:'AI real-time captioning · translation', hero_more:'See products',
+    how_h:'Speak. It becomes captions. Everyone reads it in their own language.',
+    how_lead:'The speaker just opens the app. Listeners scan a QR code and pick their language. That is all.',
+    how1_t:'The speaker talks', how1_d:'Microphone input, video played on the PC, and remote participants on a video call are all recognized.',
+    how2_t:'Captions appear instantly', how2_d:'Captions form as words are spoken, then get refined for context when each sentence ends.',
+    how3_t:'Everyone reads their language', how3_d:'Participants follow along on their own device in their own language. No app to install.',
+    choose_h:'Which product fits?', choose_lead:'Pick by where you will use it. All four share the same recognition engine and translation quality.',
+    prod_h:'Products', prod_lead:'All four products share the same recognition engine, translation quality, and glossary. Choose by setting.',
+    more_link:'Learn more →',
+    seg_h:'What kind of organization are you?', seg_lead:'Needs differ by organization type. Pick yours to see what fits.',
+    proof_h:'Measured, not just claimed', ref_h:'Already in use',
+    intro_default:'Overview video', play:'Play video', video_n:'Video {n}',
+    cmp_col:'', cmp_note:'Click a product name to open its page. Swipe sideways if the table is cut off.',
+    more_h:'Explore other products', more_lead:'Same engine and translation quality across all four. Only the setting differs.',
+    nf_h:'Page not found', nf_p:'The address may have changed or been mistyped.<br>Please choose where you would like to go.', nf_home:'Back to products',
+    proc_h:'How adoption works', proc_lead:'Five steps from first contact to ongoing support, including a hands-on trial before any contract.',
+    about_tag:'About', about_h:'Developer & Distributor', cert_full:'View the full test certificate →', faq_h:'FAQ',
+    seg_tag:'For {name}', seg_intro:'The challenges {name} face, and the Tkita setup that addresses them.',
+    seg_issue_h:'Sound familiar?', seg_pick_h:'Recommended for {name}',
+    seg_pick_lead:'We will not list everything. These two products address the needs of {name} directly.', seg_depts:'Typical departments',
+    contact_tag:'Contact', contact_h:'Let\'s talk',
+    contact_lead:'We will review your inquiry and get back to you. After a short meeting, you can use Tkita free for two weeks to a month.',
+    form_h:'Inquiry form', form_p:'Leave your organization, department, and the product you are interested in. It takes about a minute.',
+    form_note:'The form is currently in Korean. You are welcome to email us directly at {email}.', form_open:'Open the form',
+    i_tel:'Phone', i_mail:'Email', i_fax:'Fax', i_addr:'Address', i_org:'Developer · Distributor',
+    p_tag:'Product {n} · {tag}', p_flow:'How it works', p_scenes:'Where it is used', p_pair:'Often paired for',
+    p_pair_link:'{a} + {b} →', p_shots:'Screenshots', p_proof:'Same engine, same performance',
+    title_home:'Tkita — AI Real-time Captioning & Translation', title_seg:'Tkita for {name}', title_contact:'Contact | Tkita',
+    title_about:'About | Tkita', title_faq:'FAQ | Tkita', title_nf:'Page not found | Tkita'
+  }
+};
 
-(function(){
-  const links = SITE.products.map(p=>`<a href="#/${p.id}" data-id="${p.id}"><b>${esc(p.name)}</b><i>${esc(p.short)}</i></a>`).join('');
-  $('#nav').innerHTML = `<a href="#/" data-id="home"><b>제품 소개</b><i>전체 보기</i></a>` + links;
+/* 언어 결정: ?lang= → 이전 선택 → 브라우저 언어 */
+function detectLang(){
+  const q=new URLSearchParams(location.search).get('lang');
+  if(q==='en'||q==='ko') return q;
+  try{ const v=localStorage.getItem('tkita_lang'); if(v==='en'||v==='ko') return v; }catch(e){}
+  const n=((navigator.languages&&navigator.languages[0])||navigator.language||'ko').toLowerCase();
+  return n.startsWith('ko') ? 'ko' : 'en';
+}
+
+/* 영문 설정(SITE_EN)을 한국어 설정 위에 덮어써 영문판을 만듭니다 */
+function buildSite(lang){
+  if(lang!=='en' || typeof SITE_EN==='undefined') return SITE;
+  const o=JSON.parse(JSON.stringify(SITE));
+  const deep=(a,b)=>{ for(const k in b){ const v=b[k];
+    if(v&&typeof v==='object'&&!Array.isArray(v)&&a[k]&&typeof a[k]==='object'&&!Array.isArray(a[k])) deep(a[k],v); else a[k]=v; } };
+  const {products, segments, ...rest}=SITE_EN;
+  deep(o,rest);
+  if(products) o.products.forEach(p=>{ const x=products[p.id]; if(!x) return;
+    const {shotCaps, ...r}=x; Object.assign(p,r);
+    if(shotCaps) p.shots=p.shots.map((sh,i)=>[sh[0], shotCaps[i]||sh[1]]); });
+  if(segments) o.segments.forEach(g=>{ if(segments[g.id]) Object.assign(g,segments[g.id]); });
+  return o;
+}
+
+let LANG = detectLang();
+let S = buildSite(LANG);
+const T = (k,v={}) => String((UI[LANG]&&UI[LANG][k]!==undefined)?UI[LANG][k]:(UI.ko[k]??k)).replace(/\{(\w+)\}/g,(m,x)=>v[x]??'');
+const intl = n => '+82-' + String(n).replace(/^0/,'');
+const telShown = () => LANG==='en' ? intl(S.tel) : S.tel;
+
+function setLang(l){
+  if(l===LANG) return;
+  LANG=l; S=buildSite(l);
+  try{ localStorage.setItem('tkita_lang',l); }catch(e){}
+  chrome(); route();
+}
+
+const applyHref = () => S.formEmbed ? '#/contact' : (S.applyUrl);
+
+function chrome(){
+  document.documentElement.lang = LANG;
+  $('#skipLink').textContent = T('skip');
+  $('#langBtn').textContent = T('lang_btn');
+  $('#langBtn').setAttribute('aria-label', T('lang_aria'));
+  $('#navCta').textContent = T('cta');
+  $('#stickApply').textContent = T('cta');
+  $('#stickTel').textContent = T('tel_btn');
+  $('#fMakerL').textContent = T('maker');
+  $('#fSellerL').textContent = T('seller');
+  const links = S.products.map(p=>`<a href="#/${p.id}" data-id="${p.id}"><b>${esc(p.name)}</b><i>${esc(p.short)}</i></a>`).join('');
+  $('#nav').innerHTML = `<a href="#/" data-id="home"><b>${T('nav_all')}</b><i>${T('nav_all_sub')}</i></a>` + links;
   $('#navCta').href = applyHref();
-  $('#fNav').innerHTML = `<a href="#/">제품 소개</a>` + SITE.products.map(p=>`<a href="#/${p.id}">${esc(p.name)} ${esc(p.short)}</a>`).join('')
-    + SITE.segments.map(g=>`<a href="#/${g.id}">${esc(g.name)}</a>`).join('') + `<a href="#/contact">도입 문의</a><a href="#/about">회사 소개</a>`
-    + (SITE.privacyUrl ? `<a href="${esc(SITE.privacyUrl)}" target="_blank" rel="noopener">개인정보처리방침</a>` : '');
-  $('#fMaker').textContent = SITE.maker; $('#fSeller').textContent = SITE.seller;
-  $('#fAddr').textContent = SITE.addr;  $('#fFax').textContent = SITE.fax;
-  const tel=$('#fTel'); tel.textContent=SITE.tel; tel.href='tel:'+SITE.tel.replace(/-/g,'');
-  const ml=$('#fMail'); ml.textContent=SITE.email; ml.href='mailto:'+SITE.email;
+  $('#fNav').innerHTML = `<a href="#/">${T('nav_all')}</a>` + S.products.map(p=>`<a href="#/${p.id}">${esc(p.name)} ${esc(p.short)}</a>`).join('')
+    + S.segments.map(g=>`<a href="#/${g.id}">${esc(g.name)}</a>`).join('') + `<a href="#/contact">${T('f_contact')}</a><a href="#/about">${T('f_about')}</a>`
+    + (S.privacyUrl ? `<a href="${esc(S.privacyUrl)}" target="_blank" rel="noopener">${T('privacy')}</a>` : '');
+  $('#fMaker').textContent = S.maker; $('#fSeller').textContent = S.seller;
+  $('#fAddr').textContent = S.addr;  $('#fFax').textContent = S.fax;
+  const tel=$('#fTel'); tel.textContent=S.tel; tel.href='tel:'+S.tel.replace(/-/g,'');
+  const ml=$('#fMail'); ml.textContent=S.email; ml.href='mailto:'+S.email;
   $('#stickApply').href = applyHref();
-  $('#stickTel').href = 'tel:'+SITE.tel.replace(/-/g,'');
+  $('#stickTel').href = 'tel:'+S.tel.replace(/-/g,'');
+}
 
-  document.addEventListener('click',e=>{
-    const a=e.target.closest('[data-ev]'); if(!a||!window.gtag) return;
-    gtag('event',a.dataset.ev,{page:location.hash||'#/',label:a.textContent.trim()});
-  });
-})();
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-ev]'); if(!a||!window.gtag) return;
+  gtag('event',a.dataset.ev,{page:location.hash||'#/',label:a.textContent.trim(),lang:LANG});
+});
+document.getElementById('langBtn').addEventListener('click',()=>{ setLang(LANG==='ko'?'en':'ko'); });
 
 /* 자막 패널 데모 */
 let demoTimer = [];
@@ -888,7 +1263,7 @@ function runDemo(){
   demoTimer.push(setInterval(clock,1000));
   let i = 0;
   const step = () => {
-    const item = SITE.heroDemo[i % SITE.heroDemo.length];
+    const item = S.heroDemo[i % S.heroDemo.length];
     const code = l => ({'English':'EN','Tiếng Việt':'VI','中文':'ZH','日本語':'JA','Русский':'RU'}[l] || l.slice(0,2).toUpperCase());
     tr.innerHTML = item.tr.map(([l,t])=>`<div class="cap__row"><span class="cap__lang">${esc(code(l))}</span><span class="cap__txt">${esc(t)}</span></div>`).join('');
     const rows = tr.querySelectorAll('.cap__row');
@@ -906,27 +1281,27 @@ function runDemo(){
 
 function capHTML(){
   return `<div class="cap">
-    <div class="cap__bar"><span class="cap__pill">실시간 자막</span><span class="cap__rec"><i></i><span id="demoTc">00:00:00</span></span></div>
+    <div class="cap__bar"><span class="cap__pill">${T("cap_pill")}</span><span class="cap__rec"><i></i><span id="demoTc">00:00:00</span></span></div>
     <div class="cap__body"><div class="cap__ko" id="demoKo"></div><div class="cap__tr" id="demoTr"></div></div>
-    <div class="cap__foot"><b>KO</b><span>→</span><b>EN · VI · ZH</b><span style="margin-left:auto">최대 30개 언어 동시</span></div>
+    <div class="cap__foot"><b>KO</b><span>→</span><b>EN · VI · ZH</b><span style="margin-left:auto">${T("cap_foot")}</span></div>
   </div>`;
 }
 function figsHTML(){
-  const P = SITE.proof || {};
+  const P = S.proof || {};
   const bars = P.bars || [];
   const max = 100;
   const hi = bars.find(b=>b[2]), lo = bars.find(b=>!b[2]);
   const gap = (hi && lo) ? hi[1] - lo[1] : 0;
   return `<div class="proof">
     <div class="pcard">
-      <div class="pcard__h"><b>${esc(P.barLabel||'번역 품질')}</b><span>${esc(P.barHint||'')}</span></div>
+      <div class="pcard__h"><b>${esc(P.barLabel||'')}</b><span>${esc(P.barHint||'')}</span></div>
       ${bars.map(([n,v,on])=>`
         <div class="pbar${on?' pbar--on':''}">
           <span class="pbar__n">${esc(n)}</span>
           <span class="pbar__t"><span class="pbar__f" data-w="${(v/max*100).toFixed(1)}"></span></span>
-          <span class="pbar__v">${v}<i>점</i></span>
+          <span class="pbar__v">${v}<i>${T("pt")}</i></span>
         </div>`).join('')}
-      ${gap>0?`<span class="delta">▲ 구글 번역 API 대비 ${gap}점 높음</span>`:''}
+      ${gap>0?`<span class="delta">${T("delta",{n:gap})}</span>`:''}
     </div>
     <div class="pcard">
       <div class="langs">${(P.langs||[]).map(([v,k])=>
@@ -935,7 +1310,7 @@ function figsHTML(){
     </div>
   </div>
   <p class="figs-note">${esc(P.note||'')}
-    <em>${esc(P.cert||'')}${SITE.certUrl?` · <a href="${esc(SITE.certUrl)}" target="_blank" rel="noopener" style="color:#9CBAFF" data-ev="cert_view">성적서 보기</a>`:''}</em></p>`;
+    <em>${esc(P.cert||'')}${S.certUrl?` · <a href="${esc(S.certUrl)}" target="_blank" rel="noopener" style="color:#9CBAFF" data-ev="cert_view">${T("cert_view")}</a>`:''}</em></p>`;
 }
 
 /* 막대가 화면에 들어오면 길이를 채웁니다 */
@@ -949,15 +1324,15 @@ function initBars(){
 }
 
 function trialHTML(){
-  const q = SITE.inquiry || {};
+  const q = S.inquiry || {};
   const cards = q.cards || [];
-  const tel = SITE.tel.replace(/-/g,'');
-  const link = [['tel:'+tel,'전화 걸기 '+SITE.tel,'contact_tel'],[applyHref(),'문의 양식 작성','cta_apply']];
+  const tel = S.tel.replace(/-/g,'');
+  const link = [['tel:'+tel,T('inq_tel',{tel:telShown()}),'contact_tel'],[applyHref(),T('inq_form'),'cta_apply']];
   return `<section class="sec"><div class="wrap"><div class="trial">
-    <h2>${esc(q.title||'도입을 검토 중이시라면')}</h2>
+    <h2>${esc(q.title||'')}</h2>
     <p style="color:#E4EBFF;margin-top:14px;max-width:56ch;position:relative">${esc(q.lead||'')}</p>
     <div class="cols">${cards.map(([t,d],i)=>`<div class="col"><b>${esc(t)}</b><p>${esc(d)}</p>
-      <a class="btn ${i===0?'btn--white':'btn--ghost'}" href="${esc(link[i]?link[i][0]:applyHref())}" data-ev="${link[i]?link[i][2]:'cta_apply'}">${esc(link[i]?link[i][1]:'도입 문의하기')}</a></div>`).join('')}</div>
+      <a class="btn ${i===0?'btn--white':'btn--ghost'}" href="${esc(link[i]?link[i][0]:applyHref())}" data-ev="${link[i]?link[i][2]:'cta_apply'}">${esc(link[i]?link[i][1]:T('cta_long'))}</a></div>`).join('')}</div>
   </div></div></section>`;
 }
 
@@ -970,11 +1345,11 @@ function initTicker(){
   rows.forEach(r=>io.observe(r));
 }
 function tickerHTML(){
-  const n=SITE.refs.length, half=Math.ceil(n/2);
-  const a=SITE.refs.slice(0,half), b=SITE.refs.slice(half);
+  const n=S.refs.length, half=Math.ceil(n/2);
+  const a=S.refs.slice(0,half), b=S.refs.slice(half);
   const row=(arr,rev)=>`<div class="ticker${rev?' ticker--rev':''}"><div class="ticker__track">${[...arr,...arr].map(tk).join('')}</div></div>`;
   return row(a,false) + (b.length?row(b,true):'') +
-    `<p class="refnote">도입 기관 ${n}곳 · 마우스를 올리면 멈춥니다</p>`;
+    `<p class="refnote">${T("refnote",{n})}</p>`;
 }
 function tk(r){
   if(typeof r==='string') return `<span class="tk">${esc(r)}</span>`;
@@ -984,32 +1359,32 @@ function tk(r){
 }
 
 function home(){
-  const [a,b] = esc(SITE.heroTitle).split(/,\s*/);
-  const title = b ? `${a},<br><span class="grad-text">${b}</span>` : esc(SITE.heroTitle);
+  const [a,b] = esc(S.heroTitle).split(/,\s*/);
+  const title = b ? `${a},<br><span class="grad-text">${b}</span>` : esc(S.heroTitle);
   return `
   <section class="hero"><div class="wrap grid">
     <div>
-      <span class="tag"><i></i>AI 실시간 자막 · 통번역</span>
+      <span class="tag"><i></i>${T("hero_tag")}</span>
       <h1>${title}</h1>
-      <p class="lead">${esc(SITE.heroText)}</p>
+      <p class="lead">${esc(S.heroText)}</p>
       <div class="cta">
-        <a class="btn btn--grad" href="${esc(applyHref())}" data-ev="cta_apply">도입 문의하기</a>
-        <a class="btn btn--line" href="#/caption">제품 살펴보기</a>
+        <a class="btn btn--grad" href="${esc(applyHref())}" data-ev="cta_apply">${T("cta_long")}</a>
+        <a class="btn btn--line" href="#/caption">${T("hero_more")}</a>
       </div>
-      <div class="where">${SITE.products.map(p=>`<span>${esc(p.where.split('·')[0].trim())}</span>`).join('')}</div>
+      <div class="where">${S.products.map(p=>`<span>${esc(p.where.split('·')[0].trim())}</span>`).join('')}</div>
     </div>
     ${capHTML()}
   </div></section>
 
   <section class="sec sec--sky"><div class="wrap">
-    <h2>말하면, 자막이 되고, 각자의 언어가 됩니다</h2>
-    <p class="lead">준비는 발표자가 프로그램을 켜는 것뿐입니다. 듣는 사람은 QR을 찍고 자기 언어를 고르면 끝입니다.</p>
+    <h2>${T("how_h")}</h2>
+    <p class="lead">${T("how_lead")}</p>
     <div class="how">
-      <div class="how__step"><span class="n">1</span><b>발표자가 말합니다</b><p>마이크 음성은 물론 PC 재생 영상과 화상회의 상대 음성까지 인식합니다.</p></div>
+      <div class="how__step"><span class="n">1</span><b>${T("how1_t")}</b><p>${T("how1_d")}</p></div>
       <span class="how__arrow">→</span>
-      <div class="how__step"><span class="n">2</span><b>즉시 자막이 됩니다</b><p>말하는 동시에 자막이 생기고, 문장이 끝나면 문맥에 맞게 교정됩니다.</p></div>
+      <div class="how__step"><span class="n">2</span><b>${T("how2_t")}</b><p>${T("how2_d")}</p></div>
       <span class="how__arrow">→</span>
-      <div class="how__step"><span class="n">3</span><b>각자의 언어로 봅니다</b><p>참석자는 앱 설치 없이 자기 기기에서 원하는 언어로 봅니다.</p>
+      <div class="how__step"><span class="n">3</span><b>${T("how3_t")}</b><p>${T("how3_d")}</p>
         <div class="how__langs"><span>EN</span><span>VI</span><span>ZH</span><span>JA</span><span>RU</span><span>+128</span></div></div>
     </div>
   </div></section>
@@ -1017,38 +1392,38 @@ function home(){
   ${introHTML()}
 
   <section class="sec" style="padding-bottom:0"><div class="wrap">
-    <h2>어떤 제품이 맞나요?</h2>
-    <p class="lead">쓰는 자리를 고르시면 됩니다. 인식 엔진과 번역 품질은 네 제품이 같습니다.</p>
-    <div class="choose">${SITE.chooser.map(([sit,id])=>{const p=SITE.products.find(x=>x.id===id);
+    <h2>${T("choose_h")}</h2>
+    <p class="lead">${T("choose_lead")}</p>
+    <div class="choose">${S.chooser.map(([sit,id])=>{const p=S.products.find(x=>x.id===id);
       return `<a href="#/${id}"><span>${esc(sit)}</span><b>${esc(p.name)} →<small>${esc(p.short)}</small></b></a>`;}).join('')}</div>
   </div></section>
 
   <section class="sec"><div class="wrap">
-    <h2>제품 소개</h2>
-    <p class="lead">인식 엔진과 번역 품질, 용어 사전은 네 제품이 모두 같습니다. 쓰는 자리에 맞춰 고르시면 됩니다.</p>
-    <div class="tiles">${SITE.products.map(p=>`
+    <h2>${T("prod_h")}</h2>
+    <p class="lead">${T("prod_lead")}</p>
+    <div class="tiles">${S.products.map(p=>`
       <a class="tile" href="#/${p.id}">
         <div class="tile__art"><img src="${esc(p.shots[0][0])}" alt="${esc(p.name)}" loading="lazy"></div>
-        <div class="tile__body"><b>${esc(p.name)}</b><em>${esc(p.short)}</em><p>${esc(p.lead)}</p><u>자세히 보기 →</u></div>
+        <div class="tile__body"><b>${esc(p.name)}</b><em>${esc(p.short)}</em><p>${esc(p.lead)}</p><u>${T("more_link")}</u></div>
       </a>`).join('')}</div>
   </div></section>
 
   <section class="sec sec--sky"><div class="wrap">
-    <h2>어떤 기관이신가요?</h2>
-    <p class="lead">기관 유형에 따라 겪는 상황과 맞는 제품이 다릅니다. 해당하는 곳을 고르시면 바로 보실 수 있습니다.</p>
-    <div class="segs">${SITE.segments.map(g=>`<a class="seg" href="#/${g.id}"><b>${esc(g.name)}</b><p>${esc(g.headline)}</p><u>자세히 보기 →</u></a>`).join('')}</div>
+    <h2>${T("seg_h")}</h2>
+    <p class="lead">${T("seg_lead")}</p>
+    <div class="segs">${S.segments.map(g=>`<a class="seg" href="#/${g.id}"><b>${esc(g.name)}</b><p>${esc(g.headline)}</p><u>${T("more_link")}</u></a>`).join('')}</div>
   </div></section>
 
   ${compareHTML()}
 
   <section class="sec sec--char"><div class="wrap">
-    <h2>측정된 결과로 말씀드립니다</h2>
+    <h2>${T("proof_h")}</h2>
     ${figsHTML()}
   </div></section>
 
   <section class="sec sec--sky" style="padding-bottom:72px"><div class="wrap">
-    <h2>이미 현장에서 쓰고 있습니다</h2>
-    <p class="lead">${esc(SITE.refsLead)}</p>
+    <h2>${T("ref_h")}</h2>
+    <p class="lead">${esc(S.refsLead)}</p>
   </div>
   ${tickerHTML()}
   </section>
@@ -1059,24 +1434,24 @@ function home(){
 }
 
 function introHTML(){
-  const v = SITE.intro && SITE.intro.videos ? SITE.intro.videos.filter(x=>x && x[0]) : [];
+  const v = S.intro && S.intro.videos ? S.intro.videos.filter(x=>x && x[0]) : [];
   if(!v.length) return '';
   return `<section class="sec intro"><div class="wrap">
-    <h2>${esc(SITE.intro.title||'소개 영상')}</h2>
-    <p class="lead">${esc(SITE.intro.lead||'')}</p>
+    <h2>${esc(S.intro.title||T('intro_default'))}</h2>
+    <p class="lead">${esc(S.intro.lead||'')}</p>
     <div class="iv" id="iv">
-      <img src="https://i.ytimg.com/vi/${esc(v[0][0])}/maxresdefault.jpg" alt="${esc(v[0][1]||'소개 영상')}"
+      <img src="https://i.ytimg.com/vi/${esc(v[0][0])}/maxresdefault.jpg" alt="${esc(v[0][1]||T('intro_default'))}"
         onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${esc(v[0][0])}/hqdefault.jpg'">
-      <button class="play" aria-label="소개 영상 재생" onclick="playIntro(0)"><i></i></button>
+      <button class="play" aria-label="${T('play')}" onclick="playIntro(0)"><i></i></button>
     </div>
-    <div class="ivnav" id="ivnav">${v.map(([id,t],i)=>
-      `<button onclick="playIntro(${i})" data-i="${i}"><span>${pad(i+1)}</span>${esc(t||('영상 '+(i+1)))}</button>`).join('')}</div>
+    <div class="ivnav" id="ivnav">${v.map(([id,tt],i)=>
+      `<button onclick="playIntro(${i})" data-i="${i}"><span>${pad(i+1)}</span>${esc(tt||T('video_n',{n:i+1}))}</button>`).join('')}</div>
   </div></section>`;
 }
 
 /* 소개 영상 — 순서대로 이어 재생 */
 let ivPlayer=null, ivIdx=0, ivApi=false;
-function ivList(){ return (SITE.intro&&SITE.intro.videos?SITE.intro.videos:[]).filter(x=>x&&x[0]); }
+function ivList(){ return (S.intro&&S.intro.videos?S.intro.videos:[]).filter(x=>x&&x[0]); }
 function ivMark(i){ document.querySelectorAll('#ivnav button').forEach(b=>b.classList.toggle('on', +b.dataset.i===i)); }
 window.playIntro = function(i){
   const list = ivList(); if(!list.length) return;
@@ -1100,27 +1475,27 @@ window.playIntro = function(i){
 };
 
 function compareHTML(){
-  const c=SITE.compare; if(!c||!c.rows||!c.rows.length) return '';
-  const ps=SITE.products;
+  const c=S.compare; if(!c||!c.rows||!c.rows.length) return '';
+  const ps=S.products;
   return `<section class="sec"><div class="wrap">
-    <h2>${esc(c.title||'제품 비교')}</h2>
+    <h2>${esc(c.title||'')}</h2>
     <p class="lead">${esc(c.lead||'')}</p>
     <div class="cmp"><table>
-      <thead><tr><th>구분</th>${ps.map(p=>
+      <thead><tr><th>${T("cmp_col")}</th>${ps.map(p=>
         `<th><a href="#/${p.id}">${esc(p.name)}<small>${esc(p.short)}</small></a></th>`).join('')}</tr></thead>
       <tbody>${c.rows.map(r=>
         `<tr><th>${esc(r[0])}</th>${r.slice(1).map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody>
     </table></div>
-    <p class="cmp-note">제품명을 누르시면 해당 제품 페이지로 이동합니다. 표가 잘려 보이면 좌우로 밀어서 보실 수 있습니다.</p>
+    <p class="cmp-note">${T("cmp_note")}</p>
   </div></section>`;
 }
 
 function moreHTML(cur){
-  const rest=SITE.products.filter(p=>p.id!==cur);
+  const rest=S.products.filter(p=>p.id!==cur);
   if(!rest.length) return '';
   return `<section class="sec sec--sky"><div class="wrap">
-    <h2>다른 제품도 보시겠습니까?</h2>
-    <p class="lead">인식 엔진과 번역 품질은 네 제품이 같습니다. 쓰는 자리만 다릅니다.</p>
+    <h2>${T("more_h")}</h2>
+    <p class="lead">${T("more_lead")}</p>
     <div class="more">${rest.map(p=>
       `<a href="#/${p.id}"><b>${esc(p.name)}</b><em>${esc(p.short)}</em><span>${esc(p.lead)}</span></a>`).join('')}</div>
   </div></section>`;
@@ -1129,100 +1504,101 @@ function moreHTML(cur){
 function notFound(){
   return `<section class="sec"><div class="wrap nf">
     <b>404</b>
-    <h1>찾으시는 페이지가 없습니다</h1>
-    <p>주소가 바뀌었거나 잘못 입력되었을 수 있습니다.<br>아래에서 원하시는 곳으로 이동해 주십시오.</p>
+    <h1>${T("nf_h")}</h1>
+    <p>${T("nf_p")}</p>
     <div class="cta">
-      <a class="btn btn--grad" href="#/">제품 소개로 가기</a>
-      <a class="btn btn--line" href="#/contact">도입 문의하기</a>
+      <a class="btn btn--grad" href="#/">${T("nf_home")}</a>
+      <a class="btn btn--line" href="#/contact">${T("cta_long")}</a>
     </div>
   </div></section>`;
 }
 
 function procHTML(){
   return `<section class="sec sec--sky"><div class="wrap">
-    <h2>도입은 이렇게 진행됩니다</h2>
-    <p class="lead">문의부터 운영까지 다섯 단계입니다. 계약 전에 실제 환경에서 먼저 써보는 단계가 들어 있습니다.</p>
-    <div class="proc">${SITE.procedure.map(([t,d],i)=>`<div><i>${i+1}</i><b>${esc(t)}</b><p>${esc(d)}</p></div>`).join('')}</div>
+    <h2>${T("proc_h")}</h2>
+    <p class="lead">${T("proc_lead")}</p>
+    <div class="proc">${S.procedure.map(([t,d],i)=>`<div><i>${i+1}</i><b>${esc(t)}</b><p>${esc(d)}</p></div>`).join('')}</div>
   </div></section>`;
 }
 function aboutPage(){
-  const a=SITE.about;
+  const a=S.about;
   return `
   <section class="phead"><div class="wrap">
-    <span class="tag"><i></i>회사 소개</span>
-    <h1>개발과 총판</h1>
+    <span class="tag"><i></i>${T("about_tag")}</span>
+    <h1>${T("about_h")}</h1>
     <p class="lead">${esc(a.lead)}</p>
   </div></section>
   <section class="sec"><div class="wrap">
     <div class="about">
-      <div><b>개발사</b><strong>${esc(SITE.maker)}</strong><p>${esc(a.maker)}</p></div>
-      <div><b>총판사</b><strong>${esc(SITE.seller)}</strong><p>${esc(a.seller)}</p><p style="margin-top:8px">${esc(SITE.addr)}<br>Tel. ${esc(SITE.tel)} · ${esc(SITE.email)}</p></div>
+      <div><b>${T("maker")}</b><strong>${esc(S.maker)}</strong><p>${esc(a.maker)}</p></div>
+      <div><b>${T("seller")}</b><strong>${esc(S.seller)}</strong><p>${esc(a.seller)}</p><p style="margin-top:8px">${esc(S.addr)}<br>Tel. ${esc(telShown())} · ${esc(S.email)}</p></div>
     </div>
     <div class="facts">${a.facts.map(([k,v])=>`<div><span>${esc(k)}</span><b>${esc(v)}</b></div>`).join('')}</div>
-    ${SITE.certUrl?`<p class="lead" style="margin-top:18px;font-size:14px"><a href="${esc(SITE.certUrl)}" target="_blank" rel="noopener" data-ev="cert_view" style="color:var(--blue)">시험성적서 원문 보기 →</a></p>`:''}
+    ${S.certUrl?`<p class="lead" style="margin-top:18px;font-size:14px"><a href="${esc(S.certUrl)}" target="_blank" rel="noopener" data-ev="cert_view" style="color:var(--blue)">${T("cert_full")}</a></p>`:''}
   </div></section>
   ${procHTML()}
   ${trialHTML()}`;
 }
 function faqHTML(){
-  if(!SITE.faq || !SITE.faq.show) return '';
+  if(!S.faq || !S.faq.show) return '';
   return `<section class="sec"><div class="wrap">
-    <h2>자주 묻는 질문</h2>
-    <div class="faq">${SITE.faq.items.map(([q,a])=>`<details><summary>${esc(q)}</summary><div class="a">${esc(a)}</div></details>`).join('')}</div>
+    <h2>${T("faq_h")}</h2>
+    <div class="faq">${S.faq.items.map(([q,a])=>`<details><summary>${esc(q)}</summary><div class="a">${esc(a)}</div></details>`).join('')}</div>
   </div></section>`;
 }
 
 function segment(g){
-  const prods = g.products.map(id=>SITE.products.find(p=>p.id===id)).filter(Boolean);
+  const prods = g.products.map(id=>S.products.find(p=>p.id===id)).filter(Boolean);
   return `
   <section class="phead"><div class="wrap">
-    <span class="tag"><i></i>${esc(g.name)} 안내</span>
+    <span class="tag"><i></i>${T("seg_tag",{name:esc(g.name)})}</span>
     <h1 style="white-space:pre-line">${esc(g.headline)}</h1>
-    <p class="lead">${esc(g.name)}에서 실제로 겪는 상황과, 거기에 맞는 Tkita 구성입니다.</p>
+    <p class="lead">${T("seg_intro",{name:esc(g.name)})}</p>
   </div></section>
   <section class="sec"><div class="wrap">
-    <h2>이런 상황에서 쓰십니다</h2>
+    <h2>${T("seg_issue_h")}</h2>
     <div class="issues">${g.issues.map(([t,d],i)=>`<div class="issue"><i>${i+1}</i><div><b>${esc(t)}</b><p>${esc(d)}</p></div></div>`).join('')}</div>
   </div></section>
   <section class="sec sec--sky"><div class="wrap">
-    <h2>${esc(g.name)}에 맞는 구성</h2>
-    <p class="lead">전 제품을 나열하지 않았습니다. ${esc(g.name)}의 상황에 직접 대응하는 두 가지만 제안합니다.</p>
+    <h2>${T("seg_pick_h",{name:esc(g.name)})}</h2>
+    <p class="lead">${T("seg_pick_lead",{name:esc(g.name)})}</p>
     <div class="pick">${prods.map(p=>`
       <a class="tile" href="#/${p.id}">
         <div class="tile__art"><img src="${esc(p.shots[0][0])}" alt="${esc(p.name)}" loading="lazy"></div>
-        <div class="tile__body"><b>${esc(p.name)}</b><em>${esc(p.short)}</em><p>${esc(p.lead)}</p><u>자세히 보기 →</u></div>
+        <div class="tile__body"><b>${esc(p.name)}</b><em>${esc(p.short)}</em><p>${esc(p.lead)}</p><u>${T("more_link")}</u></div>
       </a>`).join('')}</div>
-    <p class="lead" style="margin-top:28px;font-size:14px">주요 도입 부서 · ${esc(g.depts)}</p>
+    <p class="lead" style="margin-top:28px;font-size:14px">${T("seg_depts")} · ${esc(g.depts)}</p>
   </div></section>
   <section class="sec sec--char"><div class="wrap">
-    <h2>측정된 결과로 말씀드립니다</h2>
+    <h2>${T("proof_h")}</h2>
     ${figsHTML()}
   </div></section>
   ${trialHTML()}`;
 }
 
 function contact(){
-  const form = SITE.formEmbed
-    ? `<iframe src="${esc(SITE.formEmbed)}" title="기관 도입 문의" allowfullscreen></iframe>`
+  const form = S.formEmbed
+    ? `<iframe src="${esc(S.formEmbed)}" title="${T('contact_tag')}" allowfullscreen></iframe>`
     : `<div class="ph" style="display:grid;place-content:center;min-height:420px;gap:14px">
-         <p style="font-size:18px;font-weight:700;color:var(--ink)">기관 도입 문의 양식</p>
-         <p>기관명, 담당 부서, 관심 제품을 남겨주시면 담당자가 연락드립니다. 1분이면 됩니다.</p>
-         <p style="margin-top:8px"><a class="btn btn--grad" href="${esc(SITE.applyUrl)}" target="_blank" rel="noopener" data-ev="cta_apply">문의 양식 열기</a></p>
-         ${SITE.privacyUrl?`<p style="font-size:13px"><a href="${esc(SITE.privacyUrl)}" target="_blank" rel="noopener" style="color:var(--mute)">개인정보처리방침</a></p>`:''}
+         <p style="font-size:18px;font-weight:700;color:var(--ink)">${T("form_h")}</p>
+         <p>${T("form_p")}</p>
+         ${T("form_note",{email:esc(S.email)})?`<p style="font-size:13.5px">${T("form_note",{email:esc(S.email)})}</p>`:""}
+         <p style="margin-top:8px"><a class="btn btn--grad" href="${esc(S.applyUrl)}" target="_blank" rel="noopener" data-ev="cta_apply">${T("form_open")}</a></p>
+         ${S.privacyUrl?`<p style="font-size:13px"><a href="${esc(S.privacyUrl)}" target="_blank" rel="noopener" style="color:var(--mute)">${T("privacy")}</a></p>`:''}
        </div>`;
   return `
   <section class="phead"><div class="wrap">
-    <span class="tag"><i></i>기관 도입 문의</span>
-    <h1>도입 상담을 신청하세요</h1>
-    <p class="lead">담당자가 확인 후 연락드립니다. 미팅을 거쳐 2주에서 한 달까지 무상으로 써보실 수 있습니다.</p>
+    <span class="tag"><i></i>${T("contact_tag")}</span>
+    <h1>${T("contact_h")}</h1>
+    <p class="lead">${T("contact_lead")}</p>
   </div></section>
   <section class="sec"><div class="wrap contact">
     <div class="info">
-      <b>전화</b><a href="tel:${esc(SITE.tel.replace(/-/g,''))}" data-ev="contact_tel">${esc(SITE.tel)}</a>
-      <b>이메일</b><a href="mailto:${esc(SITE.email)}" data-ev="contact_mail">${esc(SITE.email)}</a>
-      <b>팩스</b>${esc(SITE.fax)}
-      <b>주소</b>${esc(SITE.addr)}
-      <b>개발 · 총판</b>${esc(SITE.maker)}<br>${esc(SITE.seller)}
+      <b>${T("i_tel")}</b><a href="tel:${esc(S.tel.replace(/-/g,''))}" data-ev="contact_tel">${esc(telShown())}</a>
+      <b>${T("i_mail")}</b><a href="mailto:${esc(S.email)}" data-ev="contact_mail">${esc(S.email)}</a>
+      <b>${T("i_fax")}</b>${esc(LANG==="en"?intl(S.fax):S.fax)}
+      <b>${T("i_addr")}</b>${esc(S.addr)}
+      <b>${T("i_org")}</b>${esc(S.maker)}<br>${esc(S.seller)}
     </div>
     <div class="form">${form}</div>
   </div></section>
@@ -1232,9 +1608,9 @@ function contact(){
 function product(p, n){
   const hero = !p.youtube && p.shots.length ? p.shots[0] : null;
   const vid = p.youtube
-    ? `<div class="video" data-yt="${esc(p.youtube)}"><img src="https://i.ytimg.com/vi/${esc(p.youtube)}/maxresdefault.jpg" alt="${esc(p.name)} 소개 영상"
+    ? `<div class="video" data-yt="${esc(p.youtube)}"><img src="https://i.ytimg.com/vi/${esc(p.youtube)}/maxresdefault.jpg" alt="${esc(p.name)} ${T('intro_default')}"
          onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${esc(p.youtube)}/hqdefault.jpg'">
-       <button class="play" aria-label="${esc(p.name)} 소개 영상 재생"><i></i></button></div>`
+       <button class="play" aria-label="${esc(p.name)} ${T('play')}"><i></i></button></div>`
     : `<figure class="shot shot--hero"><div class="im"><img src="${esc(hero[0])}" alt="${esc(hero[1])}"></div></figure>`;
   const list = hero ? p.shots.slice(1) : p.shots;
   const shots = list.map(([src,cap],i)=>{
@@ -1243,7 +1619,7 @@ function product(p, n){
       <figcaption><i>${pad(i+1)}</i>${esc(cap)}</figcaption></figure>`; }).join('');
   return `
   <section class="phead"><div class="wrap">
-    <span class="tag"><i></i>제품 ${pad(n)} · ${esc(p.tag)}</span>
+    <span class="tag"><i></i>${T("p_tag",{n:pad(n),tag:esc(p.tag)})}</span>
     <h1>${esc(p.name)}<span>${esc(p.short)}</span></h1>
     <p class="lead">${esc(p.lead)}</p>
     <div class="where">${p.where.split('·').map(w=>`<span>${esc(w.trim())}</span>`).join('')}</div>
@@ -1253,25 +1629,25 @@ function product(p, n){
     ${vid}
     <div class="feats">${p.feats.map(([t,d],i)=>`<div class="feat"><i>${pad(i+1)}</i><div><b>${esc(t)}</b><p>${esc(d)}</p></div></div>`).join('')}</div>
 
-    <div class="h3">사용 흐름</div>
+    <div class="h3">${T("p_flow")}</div>
     <div class="flow">${(p.flow||[]).map(([t,d],i)=>`<div><i>${i+1}</i><div><b>${esc(t)}</b><p>${esc(d)}</p></div></div>`).join('')}</div>
 
-    <div class="h3">이런 자리에서 씁니다</div>
+    <div class="h3">${T("p_scenes")}</div>
     <div class="scenes">${(p.scenes||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div>
 
-    <div class="h3">함께 쓰는 기관</div>
-    <div class="pair">${SITE.segments.filter(g=>g.products.includes(p.id)).map(g=>{
-      const other=g.products.filter(x=>x!==p.id).map(x=>SITE.products.find(q=>q.id===x)).filter(Boolean).map(q=>q.name).join(', ');
-      return `<a href="#/${g.id}"><b>${esc(g.name)}</b><span>${esc(p.name)} + ${esc(other)} 구성 →</span></a>`;}).join('')}</div>
+    <div class="h3">${T("p_pair")}</div>
+    <div class="pair">${S.segments.filter(g=>g.products.includes(p.id)).map(g=>{
+      const other=g.products.filter(x=>x!==p.id).map(x=>S.products.find(q=>q.id===x)).filter(Boolean).map(q=>q.name).join(', ');
+      return `<a href="#/${g.id}"><b>${esc(g.name)}</b><span>${T("p_pair_link",{a:esc(p.name),b:esc(other)})}</span></a>`;}).join('')}</div>
   </div></section>
 
   <section class="sec sec--sky" style="padding-top:72px"><div class="wrap">
-    <h2>실제 화면</h2>
+    <h2>${T("p_shots")}</h2>
     <div class="sgrid">${shots}</div>
   </div></section>
 
   <section class="sec sec--char"><div class="wrap">
-    <h2>성능은 네 제품이 같습니다</h2>
+    <h2>${T("p_proof")}</h2>
     ${figsHTML()}
   </div></section>
 
@@ -1283,32 +1659,33 @@ function route(){
   stopDemo();
   ivPlayer=null; ivIdx=0;
   const id = (location.hash.replace('#/','') || 'home').trim();
-  const idx = SITE.products.findIndex(x=>x.id===id);
-  const p = SITE.products[idx];
-  const g = SITE.segments.find(x=>x.id===id);
+  const idx = S.products.findIndex(x=>x.id===id);
+  const p = S.products[idx];
+  const g = S.segments.find(x=>x.id===id);
   let html, title;
   if(p){ html = product(p, idx+1); title = `${p.name} ${p.short} — ${p.tag} | Tkita`; }
-  else if(g){ html = segment(g); title = `${g.name} 안내 | Tkita`; }
-  else if(id==='contact'){ html = contact(); title = '기관 도입 문의 | Tkita'; }
-  else if(id==='about'){ html = aboutPage(); title = '회사 소개 | Tkita'; }
-  else if(id==='faq' && SITE.faq && SITE.faq.show){ html = faqHTML() + trialHTML(); title = '자주 묻는 질문 | Tkita'; }
-  else if(id==='home' || id===''){ html = home(); title = 'Tkita — AI 실시간 자막·통번역 솔루션'; }
-  else { html = notFound(); title = '페이지를 찾을 수 없습니다 | Tkita'; }
+  else if(g){ html = segment(g); title = T('title_seg',{name:g.name}); }
+  else if(id==='contact'){ html = contact(); title = T('title_contact'); }
+  else if(id==='about'){ html = aboutPage(); title = T('title_about'); }
+  else if(id==='faq' && S.faq && S.faq.show){ html = faqHTML() + trialHTML(); title = T('title_faq'); }
+  else if(id==='home' || id===''){ html = home(); title = T('title_home'); }
+  else { html = notFound(); title = T('title_nf'); }
   $('#app').innerHTML = html;
   document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on', a.dataset.id===(p?id:(g||id==='contact'||id==='faq'||id==='about')?'':'home')));
   document.title = title;
   window.scrollTo(0,0);
-  if(window.gtag) gtag('event','page_view',{page_title:title,page_location:SITE.siteUrl+(location.hash||''),page_path:'/'+(id==='home'?'':id)});
+  if(window.gtag) gtag('event','page_view',{page_title:title,page_location:S.siteUrl+(location.hash||''),page_path:'/'+(id==='home'?'':id)});
   if(!p && !g && !['contact','faq','about'].includes(id) && (id==='home'||id==='')) runDemo();
   initTicker();
   initBars();
   const v = $('.video[data-yt]');
   if(v) v.querySelector('.play').addEventListener('click',()=>{
-    v.innerHTML = `<iframe src="https://www.youtube.com/embed/${v.dataset.yt}?autoplay=1&rel=0" title="소개 영상"
+    v.innerHTML = `<iframe src="https://www.youtube.com/embed/${v.dataset.yt}?autoplay=1&rel=0" title="${T('intro_default')}"
       allow="accelerometer;autoplay;clipboard-write;encrypted-media;picture-in-picture" allowfullscreen></iframe>`;
   });
 }
 window.addEventListener('hashchange', route);
+chrome();
 route();
 </script>
 </body>
