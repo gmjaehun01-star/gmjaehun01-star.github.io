@@ -1,12 +1,13 @@
 # Tkita 홍보 페이지 — 올리는 방법과 고치는 방법
 
-## 1. 무료로 인터넷에 올리기 (GitHub Pages)
+## 1. 사이트 주소와 올리는 곳 (GitHub Pages)
 
-1. GitHub에서 새 저장소(repository)를 만듭니다. 이름은 `tkita` 정도로 하고 **Public**으로 설정합니다.
-2. 이 폴더의 `index.html` 파일과 `images` 폴더를 통째로 업로드합니다.
-3. 저장소 상단 **Settings → Pages** 로 들어갑니다.
-4. Source를 **Deploy from a branch**, Branch를 **main / (root)** 로 지정하고 Save를 누릅니다.
-5. 2~3분 뒤 `https://내계정명.github.io/tkita/` 주소로 접속됩니다. https는 자동으로 붙습니다.
+- 사이트 주소: `https://tkita.kr/` (가비아 도메인, 3년 등록)
+- 저장소: `gmjaehun01-star/gmjaehun01-star.github.io` · **Settings → Pages** 에서 main / (root) 배포
+- 예전 주소 `https://gmjaehun01-star.github.io/` 로 들어와도 `tkita.kr` 로 자동 이동됩니다.
+- 저장소의 **`CNAME` 파일(내용: tkita.kr)은 도메인 연결용이라 절대 지우면 안 됩니다.**
+- 가비아 DNS: A 레코드 `@` 4개(185.199.108.153 / .109.153 / .110.153 / .111.153), CNAME `www` → `gmjaehun01-star.github.io.`
+- 도메인 만료일과 자동 연장은 가비아(My가비아 → 도메인)에서 확인합니다.
 
 수정할 때는 GitHub에서 `index.html`을 열고 연필 아이콘을 눌러 고친 뒤 Commit하면
 1~2분 뒤 사이트에 바로 반영됩니다.
@@ -149,6 +150,10 @@
 `siteUrl` 과, `index.html` 위쪽 `og:image` / `og:url` 두 줄의 주소를 함께 바꿔 주세요.
 카카오톡·문자로 링크를 보낼 때 뜨는 미리보기가 이 주소를 씁니다.
 
+`robots.txt` 의 `Sitemap:` 줄과 `sitemap.xml` 의 `<loc>` 주소도 같이 바꿔야 합니다.
+주소가 바뀌면 네이버 서치어드바이저·구글 서치콘솔에 새 주소를 사이트로 추가하고 사이트맵을 다시 제출합니다.
+(네이버 소유확인 코드는 주소마다 따로 발급됩니다.)
+
 
 ## 11. 이번에 추가된 항목
 
@@ -276,8 +281,8 @@
 ### 링크를 영문판으로 보내고 싶을 때
 해외 파트너에게 보낼 때는 주소 뒤에 `?lang=en` 을 붙이세요.
 
-    https://gmjaehun01-star.github.io/?lang=en
-    https://gmjaehun01-star.github.io/?lang=en#/meet
+    https://tkita.kr/?lang=en
+    https://tkita.kr/?lang=en#/meet
 
 ### 영문 내용 고치기
 `index.html` 에서 `const SITE_EN = {` 부분을 찾으시면 됩니다.
@@ -290,6 +295,10 @@
 
 ### 버튼·제목 같은 화면 공통 문구
 `const UI = {` 부분에 `ko` / `en` 로 나뉘어 있습니다. 같은 이름의 항목을 찾아 고치시면 됩니다.
+
+### 바닥 운영 표기 문구
+바닥 주소·연락처 아래에 "이 사이트는 Tkita 총판사 ㈜드림아이티가 운영합니다." 문구가 나옵니다.
+문구는 `UI` 의 `f_op` 항목(한국어 `ko`, 영문 `en`)에서 고치시면 됩니다. `{seller}` 자리에는 총판사 이름(`seller`)이 자동으로 들어갑니다.
 
 ### 영문 문의 양식
 지금은 영문판에서도 한국어 MS Forms 로 연결되며, "양식이 한국어로 되어 있으니 메일로 문의해도 된다"는 안내가 함께 나옵니다.

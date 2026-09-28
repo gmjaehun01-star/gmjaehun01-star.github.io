@@ -9,10 +9,10 @@
 <meta property="og:site_name" content="Tkita">
 <meta property="og:title" content="Tkita — 말하는 즉시, 각자의 언어로">
 <meta property="og:description" content="강의·상담·회의에서 말하는 즉시 자막이 만들어지고 참석자 각자의 언어로 번역됩니다. 음성인식 77개 언어, 번역 133개 언어. 앱 설치 없이 QR로 참여.">
-<meta property="og:image" content="https://gmjaehun01-star.github.io/images/og.png">
+<meta property="og:image" content="https://tkita.kr/images/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://gmjaehun01-star.github.io/">
+<meta property="og:url" content="https://tkita.kr/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
@@ -44,7 +44,7 @@
 const SITE = {
 
   /* ─── 사이트 운영 설정 ──────────────────────────────────── */
-  siteUrl:    "https://gmjaehun01-star.github.io/",  // 주소를 바꾸면 여기도 바꿔 주세요
+  siteUrl:    "https://tkita.kr/",  // 주소를 바꾸면 여기도 바꿔 주세요
   // Google Analytics 측정 ID와 네이버·구글 소유확인 코드는
   // 이 파일 맨 위 <head> 안 "검색엔진 소유확인 · Google Analytics" 부분에 직접 들어 있습니다.
   formEmbed:  "",        // 기관 문의 폼을 페이지 안에 넣을 때 MS Forms 삽입 주소. 비워두면 새 창으로 열림
@@ -858,6 +858,7 @@ footer b{color:#fff}
 .fnav{display:flex;gap:18px;flex-wrap:wrap}
 .fnav a{text-decoration:none;color:#9AA3BC}
 .fnav a:hover{color:#fff}
+.f-operator{margin-top:14px;font-size:13px;color:#9AA3BC}
 
 /* 제품 상세 */
 .phead{background:linear-gradient(180deg,#fff,var(--sky-2));padding:68px 0 60px;border-bottom:1px solid var(--line)}
@@ -1090,6 +1091,7 @@ footer b{color:#fff}
       <div><b><span id="fMakerL"></span> <span id="fMaker"></span> &nbsp;·&nbsp; <span id="fSellerL"></span> <span id="fSeller"></span></b></div>
       <div id="fAddr"></div>
       <div>Tel. <a id="fTel" data-ev="contact_tel" style="text-decoration:none;color:#fff"></a> &nbsp; Fax. <span id="fFax"></span> &nbsp; <a id="fMail" data-ev="contact_mail" style="text-decoration:none;color:#fff"></a></div>
+      <p class="f-operator" id="fOp"></p>
     </div>
     <div class="fnav" id="fNav"></div>
   </div>
@@ -1108,6 +1110,7 @@ const UI = {
     cta:'도입 문의', cta_long:'도입 문의하기', tel_btn:'전화 상담',
     maker:'개발사', seller:'총판사',
     nav_all:'제품 소개', nav_all_sub:'전체 보기', f_contact:'도입 문의', f_about:'회사 소개', privacy:'개인정보처리방침',
+    f_op:'이 사이트는 Tkita 총판사 {seller}가 운영합니다.',
     cap_pill:'실시간 자막', cap_foot:'최대 30개 언어 동시',
     pt:'점', delta:'▲ 구글 번역 API 대비 {n}점 높음', cert_view:'성적서 보기',
     inq_tel:'전화 걸기 {tel}', inq_form:'문의 양식 작성',
@@ -1147,6 +1150,7 @@ const UI = {
     cta:'Contact us', cta_long:'Contact us', tel_btn:'Call us',
     maker:'Developer', seller:'Master Distributor',
     nav_all:'Products', nav_all_sub:'Overview', f_contact:'Contact', f_about:'About', privacy:'Privacy Policy',
+    f_op:'This site is operated by {seller}, the master distributor of Tkita.',
     cap_pill:'Live captions', cap_foot:'Up to 30 languages at once',
     pt:'', delta:'▲ {n} points higher than Google Translate API', cert_view:'View certificate',
     inq_tel:'Call {tel}', inq_form:'Send an inquiry',
@@ -1240,6 +1244,7 @@ function chrome(){
     + (S.privacyUrl ? `<a href="${esc(S.privacyUrl)}" target="_blank" rel="noopener">${T('privacy')}</a>` : '');
   $('#fMaker').textContent = S.maker; $('#fSeller').textContent = S.seller;
   $('#fAddr').textContent = S.addr;  $('#fFax').textContent = S.fax;
+  $('#fOp').textContent = T('f_op',{seller:S.seller});
   const tel=$('#fTel'); tel.textContent=S.tel; tel.href='tel:'+S.tel.replace(/-/g,'');
   const ml=$('#fMail'); ml.textContent=S.email; ml.href='mailto:'+S.email;
   $('#stickApply').href = applyHref();
