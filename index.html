@@ -14,6 +14,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://tkita.kr/">
 <link rel="canonical" href="https://tkita.kr/">
+<meta name="robots" content="max-image-preview:large">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Tkita","alternateName":["티키타","Tkita AI 실시간 자막·통번역"],"url":"https://tkita.kr/"}
 </script>
@@ -732,6 +733,11 @@ h2{font-size:clamp(28px,3.4vw,40px)}
 .langbtn{flex:none;border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;padding:7px 12px;
   font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;letter-spacing:.02em;margin-left:14px}
 .langbtn:hover{border-color:var(--blue);color:var(--blue)}
+.lang-hint{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;background:var(--ink);color:#fff;font-size:14px;padding:9px 44px 9px 16px;position:relative;text-align:center}
+.lang-hint[hidden]{display:none}
+.lang-hint__go{border:0;background:#fff;color:var(--ink);font:inherit;font-weight:700;border-radius:8px;padding:5px 12px;cursor:pointer}
+.lang-hint__x{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:0;background:none;color:#9AA3BC;font-size:20px;line-height:1;padding:6px 8px;cursor:pointer}
+.lang-hint__x:hover{color:#fff}
 
 /* 상단 */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -1077,6 +1083,11 @@ footer b{color:#fff}
 </head>
 <body>
 <a class="skip" id="skipLink" href="#app"></a>
+<div class="lang-hint" id="langHint" lang="en" hidden>
+  <span>This site is in Korean.</span>
+  <button class="lang-hint__go" id="langHintGo" type="button" data-ev="lang_hint_en">View in English</button>
+  <button class="lang-hint__x" id="langHintX" type="button" aria-label="Close">&times;</button>
+</div>
 <header>
   <div class="wrap bar">
     <a class="brand" href="#/"><img src="images/logo.png" alt="Tkita"></a>
@@ -1192,13 +1203,24 @@ const UI = {
   }
 };
 
-/* 언어 결정: ?lang= → 이전 선택 → 브라우저 언어 */
+/* 언어 결정: ?lang= → 이전 선택 → 한국어 (브라우저 언어가 한국어가 아니면 상단 안내 띠만 표시) */
 function detectLang(){
   const q=new URLSearchParams(location.search).get('lang');
   if(q==='en'||q==='ko') return q;
   try{ const v=localStorage.getItem('tkita_lang'); if(v==='en'||v==='ko') return v; }catch(e){}
+  return 'ko';
+}
+
+/* 외국어 브라우저 방문자에게 'View in English' 안내 띠 표시 (자동 전환하지 않음) */
+function initLangHint(){
+  const el=$('#langHint'); if(!el || LANG!=='ko') return;
+  if(new URLSearchParams(location.search).get('lang')) return;
+  try{ if(localStorage.getItem('tkita_lang')) return; }catch(e){}
   const n=((navigator.languages&&navigator.languages[0])||navigator.language||'ko').toLowerCase();
-  return n.startsWith('ko') ? 'ko' : 'en';
+  if(n.startsWith('ko')) return;
+  el.hidden=false;
+  $('#langHintGo').addEventListener('click',()=>setLang('en'));
+  $('#langHintX').addEventListener('click',()=>{ el.hidden=true; try{ localStorage.setItem('tkita_lang','ko'); }catch(e){} });
 }
 
 /* 영문 설정(SITE_EN)을 한국어 설정 위에 덮어써 영문판을 만듭니다 */
@@ -1226,6 +1248,7 @@ function setLang(l){
   if(l===LANG) return;
   LANG=l; S=buildSite(l);
   try{ localStorage.setItem('tkita_lang',l); }catch(e){}
+  const h=$('#langHint'); if(h) h.hidden=true;
   chrome(); route();
 }
 
@@ -1684,7 +1707,7 @@ function route(){
   document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on', a.dataset.id===(p?id:(g||id==='contact'||id==='faq'||id==='about')?'':'home')));
   document.title = title;
   window.scrollTo(0,0);
-  if(window.gtag) gtag('event','page_view',{page_title:title,page_location:S.siteUrl+(location.hash||''),page_path:'/'+(id==='home'?'':id)});
+  if(window.gtag) gtag('event','page_view',{page_title:title,page_location:S.siteUrl+location.search+(location.hash||''),page_path:'/'+(id==='home'?'':id)});
   if(!p && !g && !['contact','faq','about'].includes(id) && (id==='home'||id==='')) runDemo();
   initTicker();
   initBars();
@@ -1697,6 +1720,7 @@ function route(){
 window.addEventListener('hashchange', route);
 chrome();
 route();
+initLangHint();
 </script>
 </body>
 </html>
