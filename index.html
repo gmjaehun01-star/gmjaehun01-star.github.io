@@ -38,6 +38,19 @@
   gtag('js', new Date());
   gtag('config', 'G-16XSS3XR8Q', { send_page_view: false });
 </script>
+<!-- NAVER 공통 SCRIPT (네이버 광고 전환 추적) ─────────────────────
+     wa 값: 네이버 광고 계정 AccountId. inflow: 1차 도메인(www 없이).
+     전환 이벤트(문의·전화·메일 클릭)는 아래 본문 스크립트의 NA_CONV 에서 보냅니다. -->
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if (!wcs_add) var wcs_add={};
+wcs_add["wa"] = "s_22b9508b022a";
+if (!_nasa) var _nasa={};
+if (window.wcs) {
+  wcs.inflow("tkita.kr");
+  wcs_do();
+}
+</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 
@@ -1308,6 +1321,19 @@ document.addEventListener('click',e=>{
   const a=e.target.closest('[data-ev]'); if(!a||!window.gtag) return;
   gtag('event',a.dataset.ev,{page:location.hash||'#/',label:a.textContent.trim(),lang:LANG});
 });
+
+/* 네이버 광고 전환 추적 — 버튼 클릭 시점에 전환을 보냅니다.
+   문의 양식은 MS Forms(외부 사이트)라 제출 완료는 잡을 수 없어, 양식 버튼 클릭을 '신청(lead)'으로 봅니다. */
+const NA_WA = 's_22b9508b022a';
+const NA_CONV = { cta_apply:'lead', contact_tel:'custom001', contact_mail:'custom002' };
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-ev]'); if(!a) return;
+  // 외부 링크(문의 양식)는 새 창으로 열어 전환 신호가 끊기지 않게 하고, 방문자는 사이트에 남게 합니다
+  if(a.host && a.host!==location.host && /^https?:$/.test(a.protocol) && !a.target){ a.target='_blank'; a.rel='noopener'; }
+  const type=NA_CONV[a.dataset.ev]; if(!type || !window.wcs || !wcs.trans) return;
+  try{ if(!window.wcs_add) window.wcs_add={}; window.wcs_add['wa']=NA_WA; wcs.trans({type:type}); }catch(err){}
+});
+let naFirstPV = true;   // 첫 화면 PV는 <head> 공통 스크립트가 보내므로, 화면 이동 때만 추가로 보냅니다
 document.getElementById('langBtn').addEventListener('click',()=>{ setLang(LANG==='ko'?'en':'ko'); });
 
 /* 자막 패널 데모 */
@@ -1737,6 +1763,8 @@ function route(){
   document.title = title;
   window.scrollTo(0,0);
   if(window.gtag) gtag('event','page_view',{page_title:title,page_location:S.siteUrl+location.search+(location.hash||''),page_path:'/'+(id==='home'?'':id)});
+  if(!naFirstPV && window.wcs && typeof window.wcs_do==='function'){ try{ wcs_do(); }catch(err){} }
+  naFirstPV = false;
   if(!p && !g && !['contact','faq','about'].includes(id) && (id==='home'||id==='')) runDemo();
   initTicker();
   initBars();
