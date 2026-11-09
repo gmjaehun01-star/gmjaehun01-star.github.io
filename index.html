@@ -261,7 +261,7 @@ const SITE = {
       short:"대면 상담용",
       name:"TkitaTalk",
       tag:"창구·상담실 대면 통역",
-      lead:"태블릿 두 대를 마주 놓고 대화합니다. 내방자는 국기 하나만 고르면 시작됩니다.",
+      lead:"직원과 내방자가 마주 앉아 각자 화면을 보며 대화합니다. 내방자는 국기 하나만 고르면 시작됩니다.",
       where:"상담 창구 · 민원실 · 상담실",
       youtube:"",
       flow:[
@@ -270,15 +270,67 @@ const SITE = {
         ["마이크 누르고 말하기","말이 끝나면 다시 눌러 끕니다. 상대 언어로 바로 번역됩니다."],
         ["종료와 기록","화면이 초기화되고 대화는 파일로 저장됩니다."]
       ],
-      scenes:["상담 창구","민원실","학부모 상담실"],
-      kit:[["req","TkitaTalk 소프트웨어"],["opt","태블릿 2대"],["opt","유선 마이크 2대"]],
-      kitNote:"소프트웨어만 필수입니다. 태블릿과 마이크는 필요하면 함께 구매하실 수 있고, 보유하신 기기를 쓸 수 있는지는 상담 때 확인해 드립니다.",
+      scenes:["상담 창구","민원실","학부모 상담실","기관 안내 데스크"],
+      kit:[["req","TkitaTalk 소프트웨어"],["opt","표준형 — 태블릿 세트 2개"],["opt","프리미엄형 — 태블릿 세트 + neat.Frame"]],
+      kitNote:"소프트웨어만 필수입니다. 하드웨어는 창구에 맞춰 아래 두 구성 중 고르실 수 있고, 보유하신 기기를 쓸 수 있는지는 상담 때 확인해 드립니다.",
+      /* 창구 구성(표준형 / 프리미엄형). 가격은 넣지 않습니다. */
+      configs:{
+        lead:"창구 성격에 맞춰 두 구성 중 고르실 수 있습니다. 직원 쪽 장비는 같고, 내방자 쪽만 다릅니다.",
+        items:[
+          { name:"구성 1 · 표준형", sub:"직원용 · 내방자용 같은 장비 2세트", img:"images/talk-standard.webp",
+            parts:["Android 태블릿 × 2","마그네틱 거치대 × 2","지향성 마이크 × 2","C타입 듀얼젠더 × 2","충전기 · C타입 케이블 각 2"],
+            points:["창구 여러 곳에 같은 세트로 빠르게 배치","충전식이라 행사 · 임시 창구로 옮기기 쉬움"],
+            fit:["상담 창구 여러 곳에 동시에 도입","오리엔테이션 · 행사 등 임시 창구로 옮겨 가며 운영","창구 데스크 주변에 콘센트를 두기 어려운 곳"] },
+          { name:"구성 2 · 프리미엄형", sub:"내방자 쪽 단말을 neat.Frame으로", img:"images/talk-frame.webp", dark:true,
+            parts:["직원용 — 태블릿 · 거치대 · 지향성 마이크 · 듀얼젠더 1세트","내방자용 — neat.Frame 1대 (화면 · 마이크 · 스피커 · 스탠드 일체형)"],
+            points:["내방자가 마주하는 장비를 한 대로 정리","기관 대표 창구에 어울리는 외관"],
+            fit:["기관 대표 창구 · 안내 데스크","해외 방문단 · 내빈 응대가 잦은 부서 (국제교류처, 외국인 민원 창구 등)","상담 공간을 새로 꾸미거나 리모델링하는 경우"] }
+        ],
+        mix:"대표 창구 1곳은 프리미엄형, 나머지 창구는 표준형으로 섞어 구성할 수도 있습니다.",
+        frame:{
+          title:"프리미엄형 · neat.Frame",
+          lead:"내방자가 보는 화면이 기관의 첫인상이 됩니다.",
+          img:"images/talk-frame-use.webp",
+          imgCap:"로비 · 안내 데스크용으로도 쓰이는 세로형 일체형 단말",
+          feats:[
+            ["15.6인치 세로형 대화면","1080×1920(60Hz) 터치 · 450nits. 눈부심 · 지문 방지 코팅으로 자막이 크고 또렷합니다."],
+            ["또렷한 소리, 깨끗한 입력","전면 2-way 스피커와 빔포밍 마이크 3개 + 트래킹 마이크 1개. 하드웨어 소음 억제 · 잔향 제거로 주변 소음을 걸러 냅니다."],
+            ["일체형 · 공간 절약","화면 · 마이크 · 스피커 · 스탠드가 한 몸이라 내방자 쪽 거치대 · 외장 마이크 · 젠더가 필요 없고, 작은 데스크에도 들어갑니다."],
+            ["검증된 디자인과 프라이버시","레드닷 디자인 어워드 2021 · 2022 수상. 프라이버시 셔터 · 커버로 카메라를 가릴 수 있고 보안 잠금 슬롯을 지원합니다."]
+          ],
+          specs:[
+            ["화면","15.6인치 정전식 멀티터치 LED · 1080×1920(60Hz) · 9:16 세로형 · 450nits · 눈부심 · 지문 방지 코팅"],
+            ["오디오","2-way 스피커(전면 트위터 · 우퍼) · 엔드파이어 빔포밍 마이크 3 + 트래킹 마이크 1 · 에코 제거 · 소음 억제 · 잔향 제거 · 자동 게인(하드웨어 처리) · 유 · 무선 헤드셋 지원"],
+            ["카메라","50MP · 113° 수평 시야 · 4배 디지털 줌 · 프라이버시 셔터 · 커버"],
+            ["센서","주변광 · 깊이 · 온도 · 습도 · 공기질"],
+            ["네트워크 · 포트","Wi-Fi · Bluetooth · USB-C(이더넷 · 액세서리) · 3.5mm 4핀 잭 · 보안 잠금 슬롯"],
+            ["전원","AC 100–240V, 50/60Hz (내장 전원부, 3m 전원 코드 포함) · 소비전력 대기 10W, 통화 14–19W"],
+            ["크기 · 무게","W 222.5 × H 445 × D 111.2mm · 3.45kg · 운영 온도 0–35℃"],
+            ["보증","구매 시 1년 무상 포함 · 이상 시 제품 1:1 교환"]
+          ],
+          specNote:"카메라와 센서는 화상회의용 기능으로, TkitaTalk 상담에는 쓰지 않습니다. 카메라는 셔터로 가려 둘 수 있습니다."
+        },
+        compare:{
+          head:["구분","구성 1 · 표준형","구성 2 · 프리미엄형"],
+          rows:[
+            ["직원용 장비","태블릿 · 거치대 · 지향성 마이크 · 듀얼젠더 각 1","태블릿 · 거치대 · 지향성 마이크 · 듀얼젠더 각 1"],
+            ["내방자용 장비","태블릿 · 거치대 · 지향성 마이크 · 듀얼젠더 각 1","neat.Frame 1대 (일체형)"],
+            ["내방자 화면","Android 태블릿","15.6인치 세로형 터치 (1080×1920) · 450nits"],
+            ["내방자 쪽 마이크","외장 단일지향성 마이크","내장 빔포밍 3 + 트래킹 1 · 소음 억제 · 잔향 제거"],
+            ["내방자 쪽 스피커","태블릿 내장 스피커","전면 트위터 · 우퍼 2-way 스피커"],
+            ["전원 · 네트워크","충전식 (충전기 포함) · Wi-Fi","AC 100–240V 상시 연결 (3m 코드 포함) · Wi-Fi"],
+            ["내방자 쪽 설치","거치대 각도 조절","데스크 스탠드 일체형 · W222 × H445 × D111mm · 3.45kg"]
+          ],
+          note:"직원 쪽은 두 구성이 같습니다. 프리미엄형은 neat.Frame이 콘센트에 상시 연결되어야 합니다."
+        }
+      },
       feats:[
         ["한국어를 몰라도 씁니다","국기 하나만 누르면 됩니다. 사용법을 설명할 필요가 없습니다."],
         ["동의 화면도 모국어","개인정보 수집·이용 동의가 내방자의 언어로 표시됩니다."],
         ["반복 안내는 등록해두고","자주 쓰는 문장을 미리 등록해 말하지 않고 전달할 수 있습니다."],
         ["끝나면 화면이 지워집니다","다음 내방자에게 앞사람의 대화가 보이지 않습니다."],
-        ["상담 기록이 남습니다","대화 내용이 파일로 저장되어 재방문 응대와 인수인계에 쓰입니다."]
+        ["상담 기록이 남습니다","대화 내용이 파일로 저장되어 재방문 응대와 인수인계에 쓰입니다."],
+        ["개인 휴대폰 대신 기관 단말로","상담은 기관이 관리하는 전용 단말에서만 이뤄집니다. 직원 개인 휴대폰을 쓰지 않습니다."]
       ],
       shots:[
         ["images/talk-hero.webp","TkitaTalk 대표 화면"],
@@ -286,8 +338,8 @@ const SITE = {
         ["images/talk-flags.webp","내방자 화면 — 국기 선택"],
         ["images/talk-chat.webp","상담자 화면"],
         ["images/talk-chat-b.webp","내방자 화면 — 각자의 언어로 표시"],
-        ["images/talk-kit.webp","구성 — 소프트웨어 필수, 태블릿 · 마이크 선택"],
-        ["images/talk-hw.webp","하드웨어 선택 구성 예 — 태블릿 · 거치대 · 마이크"]
+        ["images/talk-hw.webp","표준형 하드웨어 구성 — 태블릿 · 거치대 · 마이크"],
+        ["images/talk-frame-use.webp","프리미엄형 — neat.Frame 내방자 화면"]
       ]
     },
     {
@@ -418,7 +470,7 @@ const SITE = {
       ["대화 방식",   "한 명이 말하고 다수가 봄", "마주 앉아 양방향", "마주 앉거나 떨어져서", "다자 회의"],
       ["참여 방법",   "QR 스캔 후 웹 접속",  "국기 선택",        "QR·URL 초대",       "회의 링크 접속"],
       ["동시 인원",   "최대 30개 언어 자막",  "1 대 1",          "최대 10명",          "발표 4개 언어 · 번역 30개"],
-      ["필요 장비",   "PC (설치 또는 웹)",   "태블릿 2대 (선택 구매)", "스마트폰",           "PC"],
+      ["필요 장비",   "PC (설치 또는 웹)",   "태블릿 세트 또는 neat.Frame (선택)", "스마트폰",           "PC"],
       ["상대방 설치", "필요 없음",           "필요 없음",        "필요 없음",          "필요 없음"],
       ["종료 후 기록","음성 · 텍스트 저장",   "대화 기록 저장",    "모드별 기록 저장",    "회의록 + AI 요약"]
     ]
@@ -538,7 +590,7 @@ const SITE_EN = {
     talk: {
       short: "Face-to-face",
       tag:   "Interpretation for service desks",
-      lead:  "Two tablets face each other across the desk. Visitors just tap their country's flag to begin.",
+      lead:  "Staff and visitor sit face to face, each with their own screen. Visitors just tap their country's flag to begin.",
       where: "Service desks · Civil service counters · Counseling rooms",
       flow: [
         ["Tap Start", "Staff tap Start on their tablet. We set it up to stay signed in."],
@@ -546,19 +598,70 @@ const SITE_EN = {
         ["Tap the mic and speak", "Tap again when finished. Speech is translated into the other language right away."],
         ["End and record", "The screen resets and the conversation is saved to a file."]
       ],
-      scenes: ["Service desks", "Civil service counters", "Parent-teacher meetings"],
-      kit: [["req", "TkitaTalk software"], ["opt", "Two tablets"], ["opt", "Two wired microphones"]],
-      kitNote: "Only the software is required. Tablets and microphones can be purchased with it if needed, and we can check whether your existing devices will work.",
+      scenes: ["Service desks", "Civil service counters", "Parent-teacher meetings", "Reception desks"],
+      kit: [["req", "TkitaTalk software"], ["opt", "Standard: two tablet sets"], ["opt", "Premium: tablet set + neat.Frame"]],
+      kitNote: "Only the software is required. Choose either hardware setup below to suit your desk, and we can check whether your existing devices will work.",
+      configs: {
+        lead: "Choose the setup that fits your service desk. The staff side is the same; only the visitor side differs.",
+        items: [
+          { name: "Setup 1 · Standard", sub: "Two identical sets for staff and visitor", img: "images/talk-standard.webp",
+            parts: ["Android tablet × 2", "Magnetic stand × 2", "Directional microphone × 2", "USB-C dual adapter × 2", "Charger and USB-C cable × 2 each"],
+            points: ["Roll out the same set to many desks quickly", "Battery powered, easy to move to events and temporary desks"],
+            fit: ["Several service desks at once", "Orientations, events and other temporary desks", "Desks without a nearby power outlet"] },
+          { name: "Setup 2 · Premium", sub: "neat.Frame on the visitor side", img: "images/talk-frame.webp", dark: true,
+            parts: ["Staff: one set of tablet, stand, directional mic and adapter", "Visitor: one neat.Frame (screen, mic, speaker and stand in one)"],
+            points: ["One device in front of the visitor", "A look that suits your main front desk"],
+            fit: ["Main front desks and reception", "Departments that often host overseas delegations and guests", "New or refurbished counseling spaces"] }
+        ],
+        mix: "You can also mix them: Premium at the main desk and Standard everywhere else.",
+        frame: {
+          title: "Premium · neat.Frame",
+          lead: "The screen your visitors see is their first impression of your institution.",
+          img: "images/talk-frame-use.webp",
+          imgCap: "An all-in-one portrait display also used at lobbies and reception desks",
+          feats: [
+            ["Large 15.6\" portrait display", "1080×1920 (60Hz) touch, 450 nits. Anti-glare, anti-fingerprint coating keeps captions large and clear."],
+            ["Clear sound, clean input", "Front 2-way speakers, three beamforming mics plus one tracking mic. Hardware noise suppression and dereverberation filter out the room."],
+            ["All-in-one, space saving", "Screen, mics, speakers and stand in one unit. No stand, external mic or adapter on the visitor side, and it fits small desks."],
+            ["Proven design and privacy", "Red Dot Design Award 2021 and 2022. A privacy shutter and cover hide the camera, with a security lock slot."]
+          ],
+          specs: [
+            ["Display", "15.6\" capacitive multi-touch LED · 1080×1920 (60Hz) · 9:16 portrait · 450 nits · anti-glare, anti-fingerprint coating"],
+            ["Audio", "2-way speakers (front tweeter, woofer) · 3 endfire beamforming mics + 1 tracking mic · echo cancellation, noise suppression, dereverberation, auto gain (in hardware) · wired and wireless headset support"],
+            ["Camera", "50MP · 113° horizontal field of view · 4x digital zoom · privacy shutter and cover"],
+            ["Sensors", "Ambient light · depth · temperature, humidity, air quality"],
+            ["Network & ports", "Wi-Fi · Bluetooth · USB-C (Ethernet, accessories) · 3.5mm 4-pin jack · security lock slot"],
+            ["Power", "AC 100–240V, 50/60Hz (internal power supply, 3m cord included) · 10W standby, 14–19W in a call"],
+            ["Size & weight", "W 222.5 × H 445 × D 111.2mm · 3.45kg · operating temperature 0–35℃"],
+            ["Warranty", "1 year included with purchase · unit replaced one-for-one if faulty"]
+          ],
+          specNote: "The camera and sensors are video-conferencing features and are not used in TkitaTalk sessions. The camera can be covered with the shutter."
+        },
+        compare: {
+          head: ["", "Setup 1 · Standard", "Setup 2 · Premium"],
+          rows: [
+            ["Staff equipment", "Tablet, stand, directional mic, adapter", "Tablet, stand, directional mic, adapter"],
+            ["Visitor equipment", "Tablet, stand, directional mic, adapter", "One neat.Frame (all-in-one)"],
+            ["Visitor screen", "Android tablet", "15.6\" portrait touch (1080×1920) · 450 nits"],
+            ["Visitor microphone", "External unidirectional mic", "Built-in 3 beamforming + 1 tracking · noise suppression, dereverberation"],
+            ["Visitor speaker", "Tablet speaker", "Front tweeter and woofer, 2-way"],
+            ["Power & network", "Battery (charger included) · Wi-Fi", "AC 100–240V, always plugged in (3m cord) · Wi-Fi"],
+            ["Visitor-side setup", "Adjustable stand", "Built-in desk stand · W222 × H445 × D111mm · 3.45kg"]
+          ],
+          note: "The staff side is identical in both. Premium needs a power outlet for the neat.Frame at all times."
+        }
+      },
       feats: [
         ["Works without Korean", "Visitors just tap a flag. No instructions needed."],
         ["Consent in their own language", "The privacy consent screen is shown in the visitor's language."],
         ["Save common phrases", "Register frequently used phrases and send them without speaking."],
         ["Screen clears after each session", "The next visitor never sees the previous conversation."],
-        ["Every consultation is recorded", "Saved files support follow-up visits and staff handovers."]
+        ["Every consultation is recorded", "Saved files support follow-up visits and staff handovers."],
+        ["Institution devices, not personal phones", "Sessions run only on dedicated devices your institution manages. Staff never use their own phones."]
       ],
       shotCaps: ["TkitaTalk overview", "Staff screen: one Start button", "Visitor screen: choose a flag",
                  "Staff view", "Visitor view: each in their own language",
-                 "What's included: software required, tablets and mics optional", "Optional hardware set: tablets, stands, mics"]
+                 "Standard hardware set: tablets, stands, mics", "Premium: neat.Frame visitor screen"]
     },
     mobile: {
       short: "On the go",
@@ -669,7 +772,7 @@ const SITE_EN = {
       ["Conversation",       "One speaks, many read",  "Face to face, two-way", "Face to face or remote", "Multi-party meetings"],
       ["How to join",        "Scan QR, open web page", "Tap a flag",            "QR or link invite",      "Open the meeting link"],
       ["Capacity",           "Captions in up to 30 languages", "One-on-one",   "Up to 10 people",        "4 spoken · 30 translated languages"],
-      ["Equipment",          "PC (installed or web)",  "Two tablets (optional)", "Smartphone",             "PC"],
+      ["Equipment",          "PC (installed or web)",  "Tablet set or neat.Frame (optional)", "Smartphone",             "PC"],
       ["Install for guests", "Not required",           "Not required",          "Not required",           "Not required"],
       ["After the session",  "Audio · text saved",     "Conversation log saved","History saved by mode",  "Minutes + AI summary"]
     ]
@@ -1003,6 +1106,48 @@ footer b{color:#fff}
 .cmp td{color:var(--mute)}
 .cmp tr:last-child th,.cmp tr:last-child td{border-bottom:0}
 .cmp-note{font-size:13px;color:var(--mute);margin-top:12px}
+/* TkitaTalk 창구 구성 */
+.tcfg__lead{font-size:16px;color:var(--mute);margin-top:10px}
+.tcfg{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px}
+.tcfg__card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px 26px 22px}
+.tcfg__card--dark{background:var(--char);border-color:var(--char);color:#E6EAF6}
+.tcfg__head b{display:block;font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+.tcfg__head span{display:block;font-size:14px;color:var(--blue);font-weight:700;margin-top:2px}
+.tcfg__card--dark .tcfg__head b{color:#fff}
+.tcfg__card--dark .tcfg__head span{color:#8FB0FF}
+.tcfg__img{height:220px;display:flex;align-items:center;justify-content:center;margin:18px 0 6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}
+.tcfg__card--dark .tcfg__img{background:rgba(255,255,255,.06);border-color:transparent}
+.tcfg__img img{max-height:100%;max-width:100%;object-fit:contain}
+.tcfg__lbl{font-size:12.5px;font-weight:800;color:var(--blue);margin-top:16px;letter-spacing:.02em}
+.tcfg__card--dark .tcfg__lbl{color:#8FB0FF}
+.tcfg__list{margin:8px 0 0;padding-left:18px;font-size:14.5px;line-height:1.65}
+.tcfg__pts{margin:12px 0 0;padding:12px 14px 12px 32px;background:var(--sky-2);border-radius:10px;font-size:14px;line-height:1.6;color:var(--ink)}
+.tcfg__card--dark .tcfg__pts{background:rgba(255,255,255,.07);color:#fff}
+.tcfg__mix{margin-top:14px;font-size:14.5px;color:var(--ink);background:var(--sky);border-radius:12px;padding:12px 16px}
+.tframe{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:20px;margin-top:22px;align-items:stretch}
+.tframe__img{margin:0;border-radius:var(--r);overflow:hidden;background:var(--char);display:flex;flex-direction:column}
+.tframe__img img{width:100%;flex:1;object-fit:cover;min-height:0}
+.tframe__img figcaption{font-size:13px;color:#C9D1EE;padding:10px 14px}
+.tframe__feats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tframe__feats div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.tframe__feats b{font-size:16px;color:var(--ink);font-weight:800;letter-spacing:-.02em}
+.tframe__feats p{font-size:14px;color:var(--mute);margin-top:6px;line-height:1.6}
+.tspec{margin-top:16px;border:1px solid var(--line);border-radius:14px;background:#fff;padding:0 18px}
+.tspec summary{cursor:pointer;padding:14px 0;font-weight:800;color:var(--blue);font-size:15px}
+.tspec table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:6px}
+.tspec th{text-align:left;white-space:nowrap;color:var(--ink);font-weight:700;padding:10px 14px 10px 0;width:120px;vertical-align:top;border-top:1px solid var(--line)}
+.tspec td{color:var(--mute);padding:10px 0;border-top:1px solid var(--line);line-height:1.6}
+.tspec__note{font-size:13px;color:var(--mute);padding:4px 0 14px}
+.tcmp table{min-width:560px}
+@media (max-width:960px){
+  .tcfg,.tframe,.tframe__feats{grid-template-columns:1fr}
+  .tframe__img img{max-height:360px}
+  .tcfg__img{height:180px}
+  .tspec tr,.tspec th,.tspec td{display:block;width:auto}
+  .tspec th{padding:12px 0 2px;white-space:normal}
+  .tspec td{border-top:0;padding:0 0 12px}
+  .pkit__item em{white-space:nowrap;flex:none}
+}
 
 /* 다른 제품 보기 */
 .more{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
@@ -1194,7 +1339,7 @@ const UI = {
     form_h:'기관 도입 문의 양식', form_p:'기관명, 담당 부서, 관심 제품을 남겨주시면 담당자가 연락드립니다. 1분이면 됩니다.',
     form_note:'', form_open:'문의 양식 열기',
     i_tel:'전화', i_mail:'이메일', i_fax:'팩스', i_addr:'주소', i_org:'개발 · 총판',
-    p_tag:'제품 {n} · {tag}', p_flow:'사용 흐름', p_scenes:'이런 자리에서 씁니다', p_kit:'구성', p_kit_req:'필수', p_kit_opt:'선택', p_pair:'함께 쓰는 기관',
+    p_tag:'제품 {n} · {tag}', p_flow:'사용 흐름', p_scenes:'이런 자리에서 씁니다', p_kit:'구성', p_kit_req:'필수', p_kit_opt:'선택', p_cfg:'창구 구성 선택', p_cfg_parts:'구성품', p_cfg_fit:'이런 창구에 맞습니다', p_cfg_cmp:'두 구성 비교', p_spec:'주요 사양 자세히 보기', p_pair:'함께 쓰는 기관',
     p_pair_link:'{a} + {b} 구성 →', p_shots:'실제 화면', p_proof:'성능은 네 제품이 같습니다',
     title_home:'Tkita — AI 실시간 자막·통번역 솔루션', title_seg:'{name} 안내 | Tkita', title_contact:'기관 도입 문의 | Tkita',
     title_about:'회사 소개 | Tkita', title_faq:'자주 묻는 질문 | Tkita', title_nf:'페이지를 찾을 수 없습니다 | Tkita'
@@ -1234,7 +1379,7 @@ const UI = {
     form_h:'Inquiry form', form_p:'Leave your organization, department, and the product you are interested in. It takes about a minute.',
     form_note:'The form is currently in Korean. You are welcome to email us directly at {email}.', form_open:'Open the form',
     i_tel:'Phone', i_mail:'Email', i_fax:'Fax', i_addr:'Address', i_org:'Developer · Distributor',
-    p_tag:'Product {n} · {tag}', p_flow:'How it works', p_scenes:'Where it is used', p_kit:'What\'s included', p_kit_req:'Required', p_kit_opt:'Optional', p_pair:'Often paired for',
+    p_tag:'Product {n} · {tag}', p_flow:'How it works', p_scenes:'Where it is used', p_kit:'What\'s included', p_kit_req:'Required', p_kit_opt:'Optional', p_cfg:'Choose your desk setup', p_cfg_parts:'In the box', p_cfg_fit:'Best for', p_cfg_cmp:'Setups compared', p_spec:'Full specifications', p_pair:'Often paired for',
     p_pair_link:'{a} + {b} →', p_shots:'Screenshots', p_proof:'Same engine, same performance',
     title_home:'Tkita — AI Real-time Captioning & Translation', title_seg:'Tkita for {name}', title_contact:'Contact | Tkita',
     title_about:'About | Tkita', title_faq:'FAQ | Tkita', title_nf:'Page not found | Tkita'
@@ -1689,6 +1834,43 @@ function contact(){
   ${procHTML()}`;
 }
 
+/* TkitaTalk 창구 구성(표준형 / 프리미엄형) — SITE.products[].configs 가 있을 때만 표시 */
+function cfgHTML(c){
+  const li = a => (a||[]).map(x=>`<li>${esc(x)}</li>`).join('');
+  const cards = (c.items||[]).map(it=>`<div class="tcfg__card${it.dark?' tcfg__card--dark':''}">
+      <div class="tcfg__head"><b>${esc(it.name)}</b><span>${esc(it.sub||'')}</span></div>
+      <div class="tcfg__img"><img src="${esc(it.img)}" alt="${esc(it.name)}" loading="lazy"></div>
+      <div class="tcfg__lbl">${T('p_cfg_parts')}</div><ul class="tcfg__list">${li(it.parts)}</ul>
+      ${it.points?`<ul class="tcfg__pts">${li(it.points)}</ul>`:''}
+      <div class="tcfg__lbl">${T('p_cfg_fit')}</div><ul class="tcfg__list">${li(it.fit)}</ul>
+    </div>`).join('');
+  const f = c.frame;
+  const frame = f ? `
+    <div class="h3">${esc(f.title)}</div>
+    <p class="tcfg__lead">${esc(f.lead||'')}</p>
+    <div class="tframe">
+      <figure class="tframe__img"><img src="${esc(f.img)}" alt="${esc(f.title)}" loading="lazy">${f.imgCap?`<figcaption>${esc(f.imgCap)}</figcaption>`:''}</figure>
+      <div class="tframe__feats">${(f.feats||[]).map(([t,d])=>`<div><b>${esc(t)}</b><p>${esc(d)}</p></div>`).join('')}</div>
+    </div>
+    ${f.specs?`<details class="tspec"><summary>${T('p_spec')}</summary>
+      <table>${f.specs.map(([k,v])=>`<tr><th>${esc(k)}</th><td>${esc(v)}</td></tr>`).join('')}</table>
+      ${f.specNote?`<p class="tspec__note">${esc(f.specNote)}</p>`:''}</details>`:''}` : '';
+  const m = c.compare;
+  const cmp = m ? `
+    <div class="h3">${T('p_cfg_cmp')}</div>
+    <div class="cmp tcmp"><table>
+      <thead><tr>${m.head.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead>
+      <tbody>${m.rows.map(r=>`<tr><th>${esc(r[0])}</th>${r.slice(1).map(x=>`<td>${esc(x)}</td>`).join('')}</tr>`).join('')}</tbody>
+    </table></div>
+    ${m.note?`<p class="cmp-note">${esc(m.note)}</p>`:''}` : '';
+  return `
+    <div class="h3">${T('p_cfg')}</div>
+    ${c.lead?`<p class="tcfg__lead">${esc(c.lead)}</p>`:''}
+    <div class="tcfg">${cards}</div>
+    ${c.mix?`<p class="tcfg__mix">${esc(c.mix)}</p>`:''}
+    ${frame}${cmp}`;
+}
+
 function product(p, n){
   const hero = !p.youtube && p.shots.length ? p.shots[0] : null;
   const vid = p.youtube
@@ -1722,6 +1904,7 @@ ${p.kit ? `
     <div class="h3">${T("p_kit")}</div>
     <div class="pkit">${p.kit.map(([k,v])=>`<div class="pkit__item pkit__item--${k==='req'?'req':'opt'}"><em>${T(k==='req'?'p_kit_req':'p_kit_opt')}</em><b>${esc(v)}</b></div>`).join('')}</div>
     ${p.kitNote?`<p class="pkit__note">${esc(p.kitNote)}</p>`:''}` : ''}
+${p.configs ? cfgHTML(p.configs) : ''}
 
     <div class="h3">${T("p_pair")}</div>
     <div class="pair">${S.segments.filter(g=>g.products.includes(p.id)).map(g=>{

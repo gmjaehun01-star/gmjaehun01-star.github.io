@@ -233,6 +233,20 @@ TkitaTalk 페이지의 "구성" 칸은 `kit` 과 `kitNote` 로 만듭니다. 다
 - 영문은 `SITE_EN` 의 같은 제품 아래 `kit`, `kitNote` 를 고칩니다
 - 가격은 넣지 않습니다
 
+### TkitaTalk 창구 구성 (configs) — 2026-11-09 추가
+TkitaTalk 페이지의 "창구 구성 선택 → 프리미엄형 · neat.Frame → 두 구성 비교" 영역은 같은 제품 아래 `configs` 로 만듭니다.
+
+| 항목 | 내용 |
+|---|---|
+| `configs.items` | 구성 카드 2장 (표준형 / 프리미엄형). `dark:true` 면 어두운 카드 |
+| `configs.mix` | 카드 아래 안내 한 줄 (섞어 구성 가능) |
+| `configs.frame` | neat.Frame 소개 (사진, 특징 4개, 접히는 사양표 `specs`) |
+| `configs.compare` | 두 구성 비교표 (`head` 제목줄, `rows` 내용) |
+
+- 이미지: `talk-standard.webp`(표준형 구성품), `talk-frame.webp`(neat.Frame + 국기 화면), `talk-frame-use.webp`(사용 장면)
+- 영문은 `SITE_EN` 의 talk 아래 `configs` 를 통째로 고칩니다
+- 제안 금액, 라이선스 기간은 사이트 게시 원칙에 따라 넣지 않았습니다
+
 
 ## 15. 제품 비교표
 
